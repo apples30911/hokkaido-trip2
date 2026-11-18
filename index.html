@@ -1,51 +1,658 @@
 <!doctype html>
-<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FFFCF6"><title>北海道｜冬日旅遊手帳</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet"><style>
+<html lang="zh-Hant" class="paged-app"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FFFCF6"><title>北海道｜冬日旅遊手帳</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet"><style>
 :root{--paper:#FFFCF6;--ink:#3E3A39;--pink:#F2A497;--yellow:#F6D27A;--blue:#A8D3E6;--green:#B9DAA5;--line:3px solid var(--ink)}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font-family:'Huninn','Noto Sans TC',sans-serif;line-height:1.65}button,input,a{ -webkit-tap-highlight-color:transparent}button,a{color:inherit}button,input{font:inherit}button{cursor:pointer}a{text-underline-offset:4px}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #775599;outline-offset:4px}header{position:fixed;top:0;left:0;right:0;z-index:10;background:var(--paper);border-bottom:var(--line)}.nav{max-width:1160px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:24px}.brand{font-size:21px;text-decoration:none;white-space:nowrap}.brand span{display:inline-block;background:var(--yellow);border:2px solid;border-radius:50%;width:33px;text-align:center;margin-right:8px}.links{display:flex;gap:25px;overflow:auto;white-space:nowrap}.links a{font-size:14px;text-decoration:none;padding:7px 0}.links a:hover{text-decoration:underline}main{max-width:1120px;margin:100px auto 0;padding:0 24px}section{margin:72px 0;scroll-margin-top:105px}.hero{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:26px;margin-top:120px}.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase}.pill{display:inline-block;padding:5px 15px;border:var(--line);border-radius:30px;font-size:13px;background:var(--paper)}.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.25;letter-spacing:3px;margin:22px 0}.hero h1 em{font-style:normal;position:relative;background:var(--yellow);border-radius:12px;padding:0 8px}.sub{font-size:16px;line-height:1.9}.hero-art{width:100%;overflow:visible}.count{display:inline-flex;align-items:center;gap:12px;margin-top:15px;border:var(--line);border-radius:20px;padding:10px 20px;background:#fff6e0;transform:rotate(-2deg)}.count strong{font-size:32px}.float{animation:float 4s ease-in-out infinite}.float2{animation:float 5s ease-in-out infinite reverse}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-block;border:var(--line);border-radius:14px;padding:9px 18px;background:var(--paper);text-decoration:none;box-shadow:3px 3px 0 var(--ink)}.btn.primary{background:var(--green)}.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}.route{border-top:var(--line);border-bottom:var(--line);padding:17px 0;text-align:center;letter-spacing:2px;margin-top:40px;font-size:14px}.head{flex-wrap:wrap;display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:22px}.head h2{font-size:28px;margin:0}.num{font-size:15px;background:var(--yellow);border:var(--line);border-radius:50%;padding:7px;margin-right:10px}.small{font-size:13px;color:#625c59}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.card{border:var(--line);border-radius:25px;padding:25px;background:var(--paper)}.flight{position:relative;background:#eef6f8}.flight.return{background:#fcf0eb}.flight-top{display:flex;justify-content:space-between;gap:10px;border-bottom:2px dashed var(--ink);padding-bottom:14px}.airports{display:flex;align-items:center;justify-content:space-between;padding:20px 0 10px}.airports strong{font-size:35px;line-height:1.3;display:block}.airports span{font-size:13px}.airports>div:last-child{text-align:right}.plane{font-size:27px}.time{font-size:22px}.note{padding:10px 13px;border-left:4px solid var(--pink);background:#fff4eb;font-size:13px;border-radius:0 10px 10px 0}.dates{display:flex;overflow-x:auto;gap:10px;padding:5px 4px 16px;scrollbar-color:var(--blue) var(--paper)}.day-tab{flex:0 0 74px;border:var(--line);border-radius:17px;background:var(--paper);padding:8px 4px;line-height:1.4}.day-tab small{display:block;font-size:11px}.day-tab strong{font-size:21px;display:block}.day-tab[aria-selected=true]{background:var(--yellow);box-shadow:3px 3px 0 var(--ink);transform:translateY(-3px)}.itinerary{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px;margin-top:20px}.day-header{background:var(--blue);border:var(--line);border-radius:22px;padding:20px 23px;margin-bottom:25px}.day-header h3{font-size:25px;margin:5px 0}.timeline{padding-left:26px;margin-left:10px;border-left:3px dashed #aaa19a}.event{position:relative;margin:0 0 20px;border:var(--line);border-radius:20px;padding:19px 20px}.event:before{content:'';position:absolute;left:-39px;top:24px;width:17px;height:17px;border:var(--line);border-radius:50%;background:var(--yellow)}.event h4{font-size:19px;line-height:1.5;margin:7px 0}.event p{font-size:14px;white-space:pre-line;margin:10px 0;overflow-wrap:anywhere}.event-time{font-size:13px}.tag{font-size:12px;display:inline-block;border:2px solid var(--ink);border-radius:8px;padding:1px 8px;margin:3px 5px 2px 0;background:var(--green)}.tag.must{background:var(--pink)}.tag.transit{background:var(--blue)}.tag.cost{background:var(--yellow)}.maplink{font-size:12px}.side{align-self:start;position:sticky;top:100px}.side .card{background:#fff6dc;margin-bottom:20px;padding:20px}.side h3{margin:0 0 12px}.side p{font-size:14px}.side svg{width:100%;height:130px}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:20px}.pager button:disabled{opacity:.4;cursor:default}.bounce{animation:bounce .38s ease-out}.hotel{display:grid;grid-template-columns:180px 1fr;gap:28px;background:#f1f7ec}.hotel svg{width:100%;align-self:center}.hotel h3{font-size:23px;margin:0 0 6px}.hotel p{margin:10px 0;overflow-wrap:anywhere}.checkcard{padding:24px}.checkcard h3{margin-top:0;font-size:20px}.checklist label{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px dashed #c8c1b8;cursor:pointer;font-size:15px}.checklist label:last-child{border:0}.checklist input{width:21px;height:21px;flex-shrink:0;accent-color:var(--ink);margin-top:3px}.checklist input:checked+span{text-decoration:line-through;opacity:.55}.progress{height:12px;border:2px solid var(--ink);border-radius:8px;overflow:hidden;margin-top:8px;background:var(--paper)}.progress div{height:100%;background:var(--green);transition:width .25s}.food-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.food{padding:20px;border:var(--line);border-radius:20px;background:#fff4ee}.food:nth-child(2){background:#f1f7ec}.food:nth-child(3){background:#edf6fa}.food:nth-child(4){background:#fff7df}.food h3{font-size:17px;margin:9px 0}.food p{font-size:13px}.food svg{height:65px;width:70px}.footer{text-align:center;border-top:var(--line);padding:30px 0 45px;margin-top:60px;font-size:13px}.settings{display:flex;justify-content:center;gap:16px;align-items:center;flex-wrap:wrap;margin:20px}.settings label{cursor:pointer}.settings button{border:2px solid;border-radius:9px;background:var(--paper);padding:7px 12px}.print-only{display:none}@keyframes float{50%{transform:translateY(-7px)}}@keyframes bounce{0%{transform:translateY(9px);opacity:.5}65%{transform:translateY(-3px)}100%{transform:translateY(0);opacity:1}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}html.reduce *,html.reduce{animation:none!important;transition:none!important;scroll-behavior:auto!important}@media(max-width:760px){.nav{padding:10px 16px;display:block}.brand{font-size:18px}.links{gap:22px;margin-top:7px}.links a{padding:2px 0;font-size:13px}main{padding:0 18px;margin-top:115px}.hero{grid-template-columns:1fr;margin-top:130px;gap:15px}.hero h1{font-size:45px}.hero-art{max-width:480px;margin:auto}.hero .sub{margin-bottom:5px}.hero>div:first-child{padding-left:7px}.route{font-size:12px;letter-spacing:1px;margin-top:12px}section{margin:48px 0;scroll-margin-top:115px}.head{align-items:flex-start}.head h2{font-size:24px}.num{font-size:12px}.head>.small{max-width:125px;font-size:12px}.grid2{grid-template-columns:1fr;gap:16px}.itinerary{grid-template-columns:1fr}.side{position:static;display:grid;grid-template-columns:1fr}.side svg{display:none}.food-grid{grid-template-columns:1fr 1fr}.food{padding:16px}.hotel{grid-template-columns:1fr}.hotel svg{height:130px}.card{padding:21px}.event{padding:16px}.day-header h3{font-size:22px}.timeline{padding-left:23px;margin-left:7px}.event:before{left:-36px}.count{font-size:14px}}@media print{header,.settings,.actions,.dates,.pager,.side{display:none}main{margin:0;max-width:none}.hero{margin-top:0}.hero-art{max-height:220px}.print-only{display:block}.itinerary,.grid2{display:block}.card,.event{break-inside:avoid;margin-bottom:15px}section{margin:25px 0}*{animation:none!important}}
 
 .food-controls{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}.food-controls input,.food-controls select{padding:12px;border:var(--line);border-radius:12px;background:var(--paper);color:var(--ink);font:inherit;max-width:100%;min-width:0}.food-controls input{flex:1;min-width:180px}.food{overflow-wrap:anywhere}.meal-options{background:#f1f7ec;margin:26px 0;padding:20px;border:var(--line);border-radius:22px}.meal-options h3{margin-top:0}.meal-options li{margin-bottom:12px}.meal-options ul{padding-left:20px}.food-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.food-grid .food:nth-child(4n+1){background:#fff4ee}.food-grid .food:nth-child(4n+2){background:#f1f7ec}.food-grid .food:nth-child(4n+3){background:#edf6fa}.food-grid .food:nth-child(4n){background:#fff7df}#original-foods{margin-bottom:30px}summary{cursor:pointer;font-size:18px} @media(max-width:760px){.food-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:420px){#map-foods{grid-template-columns:1fr}}
-</style></head><body>
-<header><nav class="nav" aria-label="主要選單"><a class="brand" href="#home"><span>❄</span>北海道 冬日手帳</a><div class="links"><a href="#flights">航班</a><a href="#days">每日行程</a><a href="#food">口袋美食</a><a href="#stay">住宿</a><a href="#todo">待辦</a><a href="#packing">行李</a></div></nav></header>
-<main><section class="hero" id="home"><div><span class="pill">2026.12.11 — 12.24　／　14 DAYS</span><h1>把冬天，<br>過成<em>北海道</em>。</h1><p class="sub">一起滑雪、散步，吃一口芝麻甜點。<br>屬於我們的十四天，慢慢收藏。</p><div class="count" aria-live="polite"><span id="count-label">距離出發還有</span><strong id="countdown">24</strong><span id="count-unit">天</span><span aria-hidden="true">✦</span></div><div class="actions"><a class="btn primary" href="#days">翻開每日行程 ↗</a><a class="btn" href="#packing">收拾行李</a></div></div>
+
+/* Page navigation: all content remains in this portable HTML file. */
+.app-page[hidden]{display:none!important}.app-page{min-height:55vh}.app-page>section:first-child{margin-top:32px}.app-page[data-page=home]>.hero{margin-top:34px}main{margin-top:106px}.nav{gap:20px}.links{gap:8px;overflow:visible}.links a{display:flex;align-items:center;gap:6px;padding:8px 14px;border:2px solid transparent;border-radius:14px;font-size:15px}.links a[aria-current=page]{border-color:var(--ink);background:var(--yellow);box-shadow:2px 2px 0 var(--ink)}.links a:hover{background:#fff1d0;text-decoration:none}.links a span{font-size:21px;line-height:1}.trip-dates{display:none}.home-menu{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:30px 0}.home-menu a{border:var(--line);border-radius:20px;padding:20px;text-decoration:none;display:flex;flex-direction:column;gap:5px;background:#edf6fa;box-shadow:3px 3px 0 var(--ink)}.home-menu a:nth-child(2){background:#fff0eb}.home-menu a:nth-child(3){background:#f1f7ec}.home-menu a:nth-child(4){background:#fff6dc}.home-menu a:hover{transform:translateY(-3px)}.menu-symbol{font-size:27px}.home-menu b{font-size:20px}.home-menu small{font-size:12px}.prep-jumps{margin-bottom:24px}.footer{margin-top:35px;padding-bottom:30px}.app-page h1:focus,.app-page h2:focus{outline:none}html{scroll-behavior:auto}
+@media(max-width:760px){header{height:65px}.nav{display:flex;justify-content:space-between;padding:14px 18px}.brand{font-size:16px}.brand span{width:29px}.trip-dates{display:block;font-size:10px;max-width:80px;text-align:right}.links{position:fixed;bottom:0;left:0;right:0;margin:0;padding:8px 8px calc(8px + env(safe-area-inset-bottom));border-top:var(--line);background:var(--paper);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;z-index:20}.links a{flex-direction:column;justify-content:center;padding:6px 2px;font-size:12px;gap:3px}.links a span{font-size:23px}.links a[aria-current=page]{box-shadow:none}main{margin-top:86px;padding:0 18px 90px}.app-page>section:first-child,.app-page[data-page=home]>.hero{margin-top:18px}section{scroll-margin-top:82px}.hero h1{font-size:40px}.hero-art{max-height:260px}.home-menu{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.home-menu a{padding:15px}.home-menu b{font-size:18px}.head>.small{max-width:none}.footer{font-size:12px}.side{position:static}.food-controls input{min-width:140px}}
+@media print{.app-page[hidden]{display:block!important}.home-menu,.prep-jumps{display:none}main{margin-top:0;padding-bottom:0}.app-page{min-height:0}}
+
+.weather-card{margin:0 0 25px;padding:20px;border:var(--line);border-radius:22px;background:#edf6fa}.weather-card .head{margin-bottom:10px}.weather-card h3{margin:0;font-size:20px}.weather-card select{font:inherit;border:2px solid var(--ink);background:var(--paper);border-radius:10px;padding:8px;max-width:100%;color:var(--ink)}.weather-card .btn{font-size:13px;padding:6px 10px}.weather-card .btn:disabled{opacity:.5;cursor:wait}.wx-summary{font-size:21px;margin:16px 0}.wx-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.wx-grid>div{background:var(--paper);border:2px solid var(--ink);border-radius:12px;padding:10px}.wx-grid span{display:block;font-size:11px}.wx-grid strong{display:block;font-size:18px}.weather-card p{font-size:14px}.weather-card .small{font-size:12px}@media(max-width:760px){.wx-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.weather-card{padding:16px}}
+</style><style>
+.today-guide,.ski-card,.meal-options{color:var(--ink);text-align:left}
+.app-page[data-page=home]>.today-guide{border:var(--line);border-radius:24px;overflow:hidden;background:var(--paper);margin:26px 0 30px;box-shadow:4px 4px 0 var(--ink)}
+.guide-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 22px;border-bottom:var(--line);background:var(--yellow)}
+.guide-bar h2{margin:0;font-size:clamp(19px,2.1vw,25px)}
+.guide-bar time,.guide-stop strong,#guide-time-list,.ski-stops{font-variant-numeric:tabular-nums}
+.guide-bar time{font-size:14px;white-space:nowrap}
+.guide-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:24px;padding:20px 22px 12px}
+.guide-mode{display:inline-block;font-size:13px;color:#554936}
+.guide-intro h3{font-size:clamp(21px,2.2vw,27px);line-height:1.35;margin:3px 0 8px}
+.guide-route{list-style:none;display:flex;align-items:baseline;flex-wrap:wrap;gap:3px 7px;padding:0;margin:7px 0 12px;font-size:14px;line-height:1.55}
+.guide-route li:not(:last-child)::after{content:'›';color:#716456;margin-left:7px}
+.guide-select{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px;max-width:100%;color:#58504a;font-size:13px}
+.guide-select select{appearance:auto;color:var(--ink);font:inherit;font-size:16px;background:var(--paper);border:2px solid var(--ink);border-radius:9px;padding:4px 6px;max-width:100%;min-height:36px}
+.guide-agenda{border-left:2px dashed #a69b8a;padding-left:23px;min-width:0}
+.guide-next-label{font-size:13px;color:#58504a}
+.guide-stop{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 10px;margin:3px 0 6px;line-height:1.3}
+.guide-stop strong{font-size:clamp(22px,3vw,32px)}
+.guide-stop b{font-size:18px}
+.guide-detail,.guide-follow,.ski-card p,.meal-options p{font-size:15px;line-height:1.55;margin:5px 0 9px}
+.guide-follow{padding-top:6px;border-top:1px solid #d8cfc2}
+.guide-follow span{color:#62594e;font-size:13px}
+#guide-times{margin-top:6px}
+#guide-times summary,.meal-backups summary{font-size:14px;padding:4px 0}
+#guide-time-list{font-size:14px;list-style:none;padding:0;margin:3px 0}
+#guide-time-list li{display:flex;gap:10px;border-bottom:1px solid #ded4c8;padding:4px 0}
+#guide-time-list li span{min-width:6ch;white-space:nowrap;font-variant-numeric:tabular-nums}
+.guide-actions,.ski-official,.day-jumps{display:flex;flex-wrap:wrap;gap:8px}
+.guide-actions{border-top:1px solid #d4c9ba;margin:0 22px;padding:12px 0 16px}
+.guide-button,.walk-link,.day-jumps button{font:inherit;color:var(--ink);border:2px solid var(--ink);background:var(--paper);border-radius:12px;padding:7px 12px;cursor:pointer;line-height:1.35;text-decoration:none}
+.guide-button.primary{background:var(--green)}
+.guide-button[hidden],#guide-times[hidden]{display:none}
+.guide-link{font-size:14px;text-underline-offset:3px}
+.text-jump{font:inherit;font-size:14px;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer;background:transparent;border:0;padding:6px 0}
+.guide-button:focus-visible,.walk-link:focus-visible,.guide-link:focus-visible,.guide-select select:focus-visible,.day-jumps button:focus-visible{outline:3px solid #2d6c84;outline-offset:2px}
+.day-jumps{margin-top:12px}
+.day-jumps button{padding:6px 12px;font-size:14px}
+.ski-card{background:#edf6fa;border:var(--line);border-radius:22px;margin:18px 0;padding:18px 20px}
+.ski-card h3,.meal-options h3{font-size:22px;line-height:1.3;margin:0 0 12px}
+.ski-card h3 span{font-weight:normal;font-size:16px;display:inline-block}
+.ski-official .guide-button{background:var(--paper);font-size:15px}
+.ski-card h4{margin:16px 0 4px;font-size:17px}
+.ski-stops{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.ski-stops>div{display:flex;flex-direction:column;align-items:flex-start;gap:2px;border:2px solid var(--ink);border-radius:12px;background:var(--paper);padding:9px 11px}
+.ski-stops small{font-size:12px;overflow-wrap:anywhere}
+.ski-stops span,.ski-card .ski-caption,.ski-card .ski-lesson{font-size:14px}
+.ski-card .ski-lesson{border-left:4px solid #bd705c;padding:6px 10px;background:#fff6e8}
+.meal-options{margin:20px 0;padding:18px 20px}
+.dining-tip .guide-link{font-size:inherit}
+.dining-stop{margin:14px 0}
+.dining-stop h4{margin:0;padding:5px 10px;font-size:16px;color:#324a31;background:#dfedd6;border-radius:8px}
+.dining-stop ul{padding:0 3px;margin:0;list-style:none}
+.dining-stop li{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;border-bottom:1px solid #c8d4c2;margin:0}
+.dining-stop li>div{min-width:0;overflow-wrap:anywhere}
+.dining-stop li span.small{display:block}
+.walk-link{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;flex-shrink:0;font-size:13px;min-height:40px}
+.meal-backups{margin:10px 0}
+.meal-backups ul{margin:3px 0}
+.catalog-link{display:inline-block;margin:8px 0 0}
+#day-heading,#meal-heading,#ski-heading,#wx-heading{scroll-margin-top:105px}
+@media(max-width:760px){
+ .app-page[data-page=home]>.today-guide{margin:16px 0 25px;border-radius:19px}
+ .guide-bar{padding:9px 13px;gap:6px}
+ .guide-bar time{font-size:12px}
+ .guide-body{display:block;padding:11px 14px 7px}
+ .guide-intro h3{font-size:21px}
+ .guide-agenda{border-left:0;border-top:1px dashed #9b8b75;margin-top:10px;padding:9px 0 0}
+ .guide-actions{margin:0 14px;padding:10px 0 12px;gap:6px}
+ .guide-button,.day-jumps button{min-height:42px}
+ .guide-route{margin:5px 0 7px}
+ .guide-select select{min-height:40px}
+ .guide-button{font-size:14px;padding:6px 10px}
+ .ski-card,.meal-options{padding:14px}
+ .ski-stops{gap:6px}
+ .ski-stops>div{padding:8px}
+ #day-heading,#meal-heading,#ski-heading,#wx-heading{scroll-margin-top:80px}
+}
+@media(max-width:360px){.ski-stops{grid-template-columns:1fr}.guide-select{display:flex}.guide-select select{width:100%}}
+@media print{.guide-actions,.guide-select,.day-jumps{display:none}.today-guide,.ski-card,.dining-stop{break-inside:avoid}}
+</style>
+</head><body>
+<header><nav class="nav" aria-label="頁面選單"><a class="brand" href="#home"><span>❄</span>北海道 冬日手帳</a><span class="trip-dates">2026.12.11 — 12.24</span><div class="links"><a href="#home" data-route="home"><span aria-hidden="true">⌂</span>首頁</a><a href="#days" data-route="days"><span aria-hidden="true">▦</span>行程</a><a href="#food" data-route="food"><span aria-hidden="true">♧</span>美食</a><a href="#stay" data-route="stay"><span aria-hidden="true">⌑</span>住宿</a><a href="#todo" data-route="todo"><span aria-hidden="true">☑</span>準備</a></div></nav></header>
+<main id="app-main"><div class="app-page" data-page="home" aria-label="首頁"><section id="today-guide" class="today-guide" aria-labelledby="today-heading">
+  <div class="guide-bar">
+    <h2 id="today-heading">今天去哪裡</h2>
+    <time id="guide-clock"></time>
+  </div>
+  <div class="guide-body">
+    <div class="guide-intro">
+      <span class="guide-mode" id="guide-mode"></span>
+      <h3 id="guide-title"></h3>
+      <ol class="guide-route" id="guide-route" aria-label="行程動線"></ol>
+      <label class="guide-select">查看日期<select id="guide-date"></select></label>
+    </div>
+    <div class="guide-agenda">
+      <div id="guide-next" aria-live="polite"></div>
+      <details id="guide-times"><summary>查看當日時間</summary><ul id="guide-time-list"></ul></details>
+    </div>
+  </div>
+  <div class="guide-actions">
+    <button class="guide-button primary" id="guide-day" type="button">完整行程 →</button>
+    <button class="guide-button" id="guide-ski" type="button" hidden>雪場快查</button>
+    <button class="guide-button" id="guide-meals" type="button">順路吃什麼</button>
+  </div>
+</section>
+<section class="hero" id="home"><div><span class="pill">2026.12.11 — 12.24　／　14 DAYS</span><h1>把冬天，<br>過成<em>北海道</em>。</h1><p class="sub">一起滑雪、散步，吃一口芝麻甜點。<br>屬於我們的十四天，慢慢收藏。</p><div class="count" aria-live="polite"><span id="count-label">距離出發還有</span><strong id="countdown">24</strong><span id="count-unit">天</span><span aria-hidden="true">✦</span></div><div class="actions"><a class="btn primary" href="#days">翻開每日行程 ↗</a><a class="btn" href="#packing">收拾行李</a></div></div>
 <svg class="hero-art" viewBox="0 0 580 440" role="img" aria-label="雪山、小樽運河、札幌電視塔與戴圍巾的小雪鳥"><g stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path fill="#A8D3E6" d="M45 238Q7 80 146 54Q282-1 437 56Q583 113 537 276L502 351H80Z"/><circle fill="#F6D27A" cx="435" cy="105" r="35"/><g class="float" fill="#FFFCF6"><path d="M73 114q-2-23 21-23q13-27 38-4q27-3 29 27Z"/><path d="M299 60q-1-19 16-19q15-20 31 0q22-1 23 19Z"/></g><path fill="#B9DAA5" d="M52 267L182 118L301 267L385 151L532 290Z"/><path fill="#FFFCF6" d="M138 169l44-51 50 62-32-9-18 12-18-20Z M350 195l35-44 43 49-22-3-16 10-16-14Z"/><path fill="#FFFCF6" d="M34 296Q133 253 251 283Q406 252 551 297L541 370Q282 449 41 363Z"/><path fill="#A8D3E6" d="M278 290Q319 317 277 335Q236 356 379 392L466 372Q330 341 357 323Q381 298 346 284Z"/>
 <g fill="#F2A497"><path d="M98 280l32-137 31 137Z"/><path d="M91 228h77v15H91Z"/><path fill="#FFFCF6" d="M108 176h44v32h-44Z"/><path d="M130 143v-34M105 258h50M119 209l30 49M141 209l-30 49"/><circle fill="#F6D27A" cx="130" cy="191" r="10"/><path d="M130 184v7h6"/></g><g fill="#F6D27A"><path d="M367 260v-58h70v58Z"/><path fill="#F2A497" d="M356 202l46-29 47 29Z"/><path d="M439 279v-64h62v64Z"/><path fill="#F2A497" d="M431 215l39-26 40 26Z"/></g><g fill="#FFFCF6"><path d="M381 220h14v20h-14Z M411 220h14v20h-14Z M453 231h14v20h-14Z M479 231h13v20h-13Z"/></g><path fill="none" d="M358 277l149 24M361 267v25M396 274v25M435 283v25M473 291v25"/>
 <g class="float2"><path fill="#FFFCF6" d="M123 340q-14-65 43-75q54-1 54 62q-5 39-49 39q-36 0-48-26Z"/><path fill="#3E3A39" d="M124 310q-27 16 2 31M213 310q27 16 1 31"/><circle cx="155" cy="301" r="3"/><circle cx="188" cy="301" r="3"/><path fill="#F6D27A" d="M167 309l7 7 7-7Z"/><path fill="#F2A497" d="M128 325q43 18 84 0l-2 15q-43 16-81-1Z M186 341l10 31 16-5-11-28Z"/><path d="M152 363v10m-5 0h10m28-10v10m-5 0h10"/></g><g fill="#FFFCF6"><circle cx="67" cy="194" r="4"/><circle cx="270" cy="111" r="4"/><circle cx="488" cy="159" r="4"/><path d="M311 202v18m-9-9h18M221 66v16m-8-8h16M495 95v16m-8-8h16"/></g><path fill="#B9DAA5" d="M66 319l24-42 24 42H99l19 23H62l20-23Z"/></g><text x="310" y="420" fill="#3E3A39" font-size="14" font-family="Huninn,sans-serif" letter-spacing="4">HOKKAIDO WINTER TALES</text></svg></section>
 <div class="route">札幌　•　小樽　•　手稻　•　藻岩山　•　富良野 & 美瑛</div>
-<section id="flights"><div class="head"><h2><span class="num">01</span>飛向雪國</h2><span class="small">機票時間皆為當地時間</span></div><div class="grid2"><article class="card flight"><div class="flight-top"><b>去程 · 12/11（五）</b><span>長榮航空 BR116</span></div><div class="airports"><div><strong>TPE</strong><span>桃園機場・第二航廈</span></div><span class="plane">✈</span><div><strong>CTS</strong><span>札幌新千歲機場</span></div></div><div class="time">09:30 → 14:05</div><p class="small">已劃位；原稿備註：起飛前 48 小時內線上報到。</p></article><article class="card flight return"><div class="flight-top"><b>回程 · 12/24（四）</b><span>長榮航空 BR115</span></div><div class="airports"><div><strong>CTS</strong><span>札幌新千歲機場</span></div><span class="plane">✈</span><div><strong>TPE</strong><span>桃園機場</span></div></div><div class="time">15:20 → 18:55 <span class="tag must">待核對</span></div><p class="note">採用 Word 時間欄；同列另寫「03:20–07:05」，兩者不一致，請以電子機票為準。</p></article></div></section>
-<section id="days"><div class="head"><h2><span class="num">02</span>一天一頁，慢慢玩</h2><span class="small">左右滑動日期，翻開下一天</span></div><div class="dates" role="tablist" aria-label="行程日期" id="dates"></div><div class="itinerary"><div><div id="day-panel" role="tabpanel" tabindex="0"></div><div class="pager"><button class="btn" id="prev">← 前一天</button><button class="btn" id="next">後一天 →</button></div></div><aside class="side"><div class="card"><svg viewBox="0 0 240 140" aria-hidden="true"><g stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"><path fill="#FFFCF6" d="M15 122L87 24l62 98 35-64 43 64Z"/><path fill="#A8D3E6" d="M62 59l25-35 25 40-20-9-13 10Z"/><path d="M20 25l201 35"/><g class="float"><path d="M135 45v25"/><rect x="109" y="69" width="58" height="43" rx="12" fill="#F2A497"/><path fill="#FFFCF6" d="M119 78h38v20h-38Z"/><path d="M138 78v20"/></g></g></svg><h3>雪國小提醒</h3><p>12/14–16 手稻接駁：<br><b>08:05 上車</b><br>15:30 收工 → 16:10 回程</p><p>12/15 家瑜教練課：<br><b>09:30–15:30</b><br>含一小時休息，授課共 5 小時。</p><p class="small">12/21–23 接駁時刻原稿未填，需另確認。</p></div><div class="card" style="background:#f1f7ec"><h3>手帳使用說明</h3><p>「必去」依原稿強調項目及每日主題標示。時間空白保留為彈性安排，不另編造。</p><p class="small">營業時間、票價與交通皆依 Word 整理，未做即時查證。地圖連結可另開查詢。</p></div></aside></div></section>
-<section id="food"><div class="head"><h2><span class="num">03</span>北海道美食地圖</h2><span class="small">90 家餐飲＋4 處市場／美食街</span></div>
+<div class="home-menu" aria-label="旅程捷徑"><a href="#days"><span class="menu-symbol">▦</span><b>每日行程</b><small>14 天的冬日冒險 →</small></a><a href="#food"><span class="menu-symbol">♧</span><b>美食地圖</b><small>94 個口袋地標 →</small></a><a href="#stay"><span class="menu-symbol">⌑</span><b>住宿資訊</b><small>今晚回哪裡休息 →</small></a><a href="#todo"><span class="menu-symbol">☑</span><b>出發準備</b><small>待辦事項與行李 →</small></a></div><section id="flights"><div class="head"><h2><span class="num">01</span>飛向雪國</h2><span class="small">機票時間皆為當地時間</span></div><div class="grid2"><article class="card flight"><div class="flight-top"><b>去程 · 12/11（五）</b><span>長榮航空 BR116</span></div><div class="airports"><div><strong>TPE</strong><span>桃園機場・第二航廈</span></div><span class="plane">✈</span><div><strong>CTS</strong><span>札幌新千歲機場</span></div></div><div class="time">09:30 → 14:05</div><p class="small">台灣時間起飛 → 日本時間抵達<br>飛行時間：3 小時 35 分鐘｜依提供的航班資訊更新</p><p class="small">已劃位；原稿備註：起飛前 48 小時內線上報到。</p></article><article class="card flight return"><div class="flight-top"><b>回程 · 12/24（四）</b><span>長榮航空 BR115</span></div><div class="airports"><div><strong>CTS</strong><span>札幌新千歲機場</span></div><span class="plane">✈</span><div><strong>TPE</strong><span>桃園機場</span></div></div><div class="time">15:20 → 18:55</div><p class="small">日本時間起飛 → 台灣時間抵達<br>飛行時間：4 小時 35 分鐘｜依提供的航班資訊更新</p><p class="note">抵達時間已由 19:05 調整為 18:55。</p></article></div></section>
+</div><div class="app-page" data-page="days" aria-label="每日行程" hidden><section id="days"><div class="head"><h2><span class="num">02</span>一天一頁，慢慢玩</h2><span class="small">左右滑動日期，翻開下一天</span></div><div class="dates" role="tablist" aria-label="行程日期" id="dates"></div><div class="itinerary"><div><div id="day-panel" role="tabpanel" tabindex="0"></div><div class="pager"><button class="btn" id="prev">← 前一天</button><button class="btn" id="next">後一天 →</button></div></div><aside class="side"><div class="card"><svg viewBox="0 0 240 140" aria-hidden="true"><g stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"><path fill="#FFFCF6" d="M15 122L87 24l62 98 35-64 43 64Z"/><path fill="#A8D3E6" d="M62 59l25-35 25 40-20-9-13 10Z"/><path d="M20 25l201 35"/><g class="float"><path d="M135 45v25"/><rect x="109" y="69" width="58" height="43" rx="12" fill="#F2A497"/><path fill="#FFFCF6" d="M119 78h38v20h-38Z"/><path d="M138 78v20"/></g></g></svg><h3>雪國小提醒</h3><p>12/14–16 手稻接駁：<br><b>08:05 上車</b><br>15:30 收工 → 16:10 回程</p><p>12/15 家瑜教練課：<br><b>09:30–15:30</b><br>含一小時休息，授課共 5 小時。</p><p class="small">12/21–23 接駁時刻原稿未填，需另確認。</p></div><div class="card" style="background:#f1f7ec"><h3>手帳使用說明</h3><p>使用頁面選單切換行程、美食、住宿與準備清單；瀏覽器上一頁可回到上一個頁面。</p><p>「必去」依原稿強調項目及每日主題標示。時間空白保留為彈性安排，不另編造。</p><p class="small">營業時間、票價與交通皆依 Word 整理，未做即時查證。地圖連結可另開查詢。</p></div></aside></div></section>
+</div><div class="app-page" data-page="food" aria-label="美食地圖" hidden><section id="food"><div class="head"><h2><span class="num">03</span>北海道美食地圖</h2><span class="small">90 家餐飲＋4 處市場／美食街</span></div>
 <p>已整理你的 Google Maps「北海道之旅」清單。依地區挑選，點擊店名地圖可查看分店位置。</p>
 <p class="note">每日用餐區是依原行程與地址整理的備選，不代表已訂位或保證順路。營業時間、休息日、價格與訂位狀況未逐店查證，出發前請查看地圖。美瑛團體行程不可自行假定能離團用餐；大沼地點列為本次路線外。</p>
 <a href="https://maps.app.goo.gl/kwrjMKg22PGXmcQq5" target="_blank" rel="noopener" class="btn">開啟完整收藏清單 ↗</a>
 <details id="original-foods" open><summary>原稿四家必吃甜點與麵包</summary><div class="food-grid" id="foods"></div></details>
-<div class="food-controls"><input id="food-search" type="search" aria-label="搜尋店名或地址" placeholder="搜尋店名或地址…"><select id="food-area" aria-label="依地區篩選"><option value="">全部地區</option></select></div><p id="food-count" class="small" aria-live="polite"></p><div class="food-grid" id="map-foods"></div>
+<div class="food-controls"><input id="food-search" type="search" aria-label="搜尋店名、地區或地址" placeholder="搜尋店名、地區或地址…"><select id="food-area" aria-label="依地區篩選"><option value="">全部地區</option></select></div><p id="food-count" class="small" aria-live="polite"></p><div class="food-grid" id="map-foods"></div>
 <p class="small">清單整理日期：2026/11/17。藥妝、郵局、一般景點與購物商場未列入餐飲名單；相同品牌的不同分店分別保留。</p></section>
-<section id="stay"><div class="head"><h2><span class="num">04</span>十三晚的小窩</h2><span class="pill">12/11 入住 → 12/24 退房</span></div><article class="card hotel"><svg viewBox="0 0 190 170" role="img" aria-label="可愛的札幌飯店插圖"><g stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"><rect x="30" y="25" width="130" height="125" rx="8" fill="#F6D27A"/><path fill="#FFFCF6" d="M20 27L95 6l75 21Z"/><path fill="#A8D3E6" d="M48 45h24v24H48Z M119 45h24v24h-24Z M48 82h24v24H48Z M119 82h24v24h-24Z"/><path fill="#F2A497" d="M81 117h29v33H81Z"/><path d="M12 151h166"/><path fill="#FFFCF6" d="M77 78h37v23H77Z"/></g><text x="95" y="95" font-size="14" text-anchor="middle" fill="#3E3A39">宿</text></svg><div><h3>MYSTAYS 札幌公園精品酒店</h3><span class="small">HOTEL MYSTAYS PREMIER Sapporo Park</span><p>入住 15:00 後 ／ 退房 11:00 前<br>中島公園站附近・連住 13 晚</p><p class="small">2-2-10 Nishi, Minami 9-jo, Chuo-ku,<br>Sapporo-shi, Hokkaido 064-0809 Japan</p><div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=HOTEL+MYSTAYS+PREMIER+Sapporo+Park" target="_blank" rel="noopener">開啟飯店地圖 ↗</a><a class="btn" href="tel:+81115123456">+81-11-512-3456</a></div></div></article></section>
-<section id="todo"><div class="head"><h2><span class="num">05</span>出發前，準備好了嗎？</h2><span class="small" id="save-info">勾選自動儲存在此瀏覽器</span></div><div class="grid2"><article class="card checkcard" style="background:#fff5e0"><h3>旅途待辦 <span class="small">依 Word 整理</span></h3><div class="checklist" id="tasks"></div></article><article class="card checkcard" style="background:#edf6fa"><h3>出發前清單 <span class="small">補充建議</span></h3><div class="checklist" id="before"></div></article></div></section>
+</div><div class="app-page" data-page="stay" aria-label="住宿資訊" hidden><section id="stay"><div class="head"><h2><span class="num">04</span>十三晚的小窩</h2><span class="pill">12/11 入住 → 12/24 退房</span></div><article class="card hotel"><svg viewBox="0 0 190 170" role="img" aria-label="可愛的札幌飯店插圖"><g stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"><rect x="30" y="25" width="130" height="125" rx="8" fill="#F6D27A"/><path fill="#FFFCF6" d="M20 27L95 6l75 21Z"/><path fill="#A8D3E6" d="M48 45h24v24H48Z M119 45h24v24h-24Z M48 82h24v24H48Z M119 82h24v24h-24Z"/><path fill="#F2A497" d="M81 117h29v33H81Z"/><path d="M12 151h166"/><path fill="#FFFCF6" d="M77 78h37v23H77Z"/></g><text x="95" y="95" font-size="14" text-anchor="middle" fill="#3E3A39">宿</text></svg><div><h3>MYSTAYS 札幌公園精品酒店</h3><span class="small">HOTEL MYSTAYS PREMIER Sapporo Park</span><p>入住 15:00 後 ／ 退房 11:00 前<br>中島公園站附近・連住 13 晚</p><p class="small">2-2-10 Nishi, Minami 9-jo, Chuo-ku,<br>Sapporo-shi, Hokkaido 064-0809 Japan</p><div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=HOTEL+MYSTAYS+PREMIER+Sapporo+Park" target="_blank" rel="noopener">開啟飯店地圖 ↗</a><a class="btn" href="tel:+81115123456">+81-11-512-3456</a></div></div></article></section>
+</div><div class="app-page" data-page="todo" aria-label="準備清單" hidden><section id="todo"><div class="head"><h2 tabindex="-1"><span class="num">05</span>出發前，準備好了嗎？</h2><span class="small" id="save-info">勾選自動儲存在此瀏覽器</span></div><div class="actions prep-jumps"><a class="btn" href="#todo">待辦事項</a><a class="btn" href="#packing">行李清單 ↓</a></div><div class="grid2"><article class="card checkcard" style="background:#fff5e0"><h3>旅途待辦 <span class="small">依 Word 整理</span></h3><div class="checklist" id="tasks"></div></article><article class="card checkcard" style="background:#edf6fa"><h3>出發前清單 <span class="small">補充建議</span></h3><div class="checklist" id="before"></div></article></div></section>
 <section id="packing"><div class="head"><h2><span class="num">06</span>把冬天裝進行李</h2><span class="small">配合滑雪旅行的補充建議</span></div><div class="grid2"><article class="card checkcard"><h3>雪場裝備</h3><div class="checklist" id="snow"></div></article><article class="card checkcard"><h3>日常與隨身</h3><div class="checklist" id="daily"></div></article></div><div style="margin-top:24px"><div class="small" id="progress-text" aria-live="polite"></div><div class="progress"><div id="progress-bar"></div></div></div></section>
-<footer class="footer"><p>❄ 北海道冬日手帳 · 2026<br>讓每一頁，都留下喜歡的冬天。</p><p class="small">行程來源：北海道.docx＋Google Maps「北海道之旅」美食收藏｜用餐備選為新增整理</p><div class="settings"><label><input type="checkbox" id="motion"> 減少動態效果</label><button id="reset">重設勾選</button></div><p class="small">離線可查看行程與使用清單；Google 字型與地圖需要網路。</p></footer></main>
+</div><footer class="footer"><p>❄ 北海道冬日手帳 · 2026<br>讓每一頁，都留下喜歡的冬天。</p><p class="small">行程來源：北海道.docx＋Google Maps「北海道之旅」美食收藏＋提供的航班截圖｜用餐備選為新增整理</p><div class="settings"><label><input type="checkbox" id="motion"> 減少動態效果</label><button id="reset">重設勾選</button></div><p class="small">離線可查看行程與使用清單；Google 字型、地圖與即時天氣需要網路。</p></footer></main>
 <script id="food-map-data" type="application/json">[{"id": 0, "name": "Kitamaruyamakyoju", "address": "26 Chome-5-12 Kita 6 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0826日本", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=8254043503551670691", "kind": "餐飲店家"}, {"id": 1, "name": "十勝豚丼 いっぴん 札幌車站店", "address": "6 階, 3 Chome-５番地 Kita 5 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0035日本", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=6537995256511711405", "kind": "餐飲店家"}, {"id": 2, "name": "小樽海鮮丼 吉", "address": "4-1 Sakaimachi, Otaru, Hokkaido 047-0027日本", "area": "小樽", "url": "https://www.google.com/maps?cid=1859933895840347230", "kind": "餐飲店家"}, {"id": 3, "name": "Mitsuhashi", "address": "日本〒064-0808 Hokkaido, Sapporo, Chuo Ward, Minami 8 Jonishi, 6 Chome−289-33 札幌ダイカンプラザ", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=15610075628119076176", "kind": "餐飲店家"}, {"id": 4, "name": "SAPPORO餃子製造所札幌駅西店", "address": "日本〒060-0806 Hokkaido, Sapporo, Kita Ward, Kita 6 Jonishi, 6 Chome−２−20", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=9243224835226007547", "kind": "餐飲店家"}, {"id": 5, "name": "札幌唐揚雞專門店 札幌站北口店", "address": "日本〒060-0808 Hokkaido, Sapporo, Kita Ward, Kita 8 Jonishi, 4 Chome−13−3 金子ビル 1F", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=14657298129115890971", "kind": "餐飲店家"}, {"id": 6, "name": "牛タンの笑や", "address": "日本〒060-0002 Hokkaido, Sapporo, Chuo Ward, Kita 2 Jonishi, 3 Chome−１−12 敷島ビル B1F", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=12543997598124753934", "kind": "餐飲店家"}, {"id": 7, "name": "Gyu no Ishizaki (Wagyu Shabushabu and Sukiyaki)", "address": "Gダイニング札幌 ビル, ３F, 3 Chome Minami 3 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0063日本", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=260998860694131739", "kind": "餐飲店家"}, {"id": 8, "name": "串鳥 札幌駅北口店", "address": "日本〒060-0807 Hokkaido, Sapporo, Kita Ward, Kita 7 Jonishi, 4 Chome−８−3 北口ヨシヤビル １階～２階", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=15474908816559192469", "kind": "餐飲店家"}, {"id": 9, "name": "迴轉壽司 根室花丸 大同生命札幌大樓miredo店", "address": "日本〒060-0003 Hokkaido, Sapporo, Chuo Ward, Kita 3 Jonishi, 3 Chome−1−番地 大同生命札幌ビル B1F", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=9499166559529740111", "kind": "餐飲店家"}, {"id": 10, "name": "迴轉壽司 根室花丸 COCONO SUSUKINO店", "address": "日本〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jonishi, 4 Chome−1番 1 ココノススキノ地下1階", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=4127021088491588403", "kind": "餐飲店家"}, {"id": 11, "name": "迴轉壽司 根室花丸 JR Tower Stellar Place店", "address": "日本〒060-0005 Hokkaido, Sapporo, Chuo Ward, Kita 5 Jonishi, 4 Chome JRタワーステラプレイス ６階", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=5164715388780302898", "kind": "餐飲店家"}, {"id": 12, "name": "Nagoyakatei Hassamu", "address": "9 Chome-17-10 Hassamu 6 Jo, Nishi Ward, Sapporo, Hokkaido 063-0826日本", "area": "其他札幌地區", "url": "https://www.google.com/maps?cid=3234006910516725654", "kind": "餐飲店家"}, {"id": 13, "name": "SHO-RIN Susukino Main Store", "address": "日本〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jonishi, 3 Chome−10 １階", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=17261760635755293269", "kind": "餐飲店家"}, {"id": 14, "name": "Yakiniku Tokuju", "address": "日本〒060-0004 Hokkaido, Sapporo, Chuo Ward, Kita 4 Jonishi, 5 Chome−1 アスティ45ビル 1階", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=5073720044747818781", "kind": "餐飲店家"}, {"id": 15, "name": "湯咖喱 奥芝商店 実家", "address": "日本〒060-0061 Hokkaido, Sapporo, Chuo Ward, Minami 1 Jonishi, 5 Chome−16 地下１階", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=4555561406331736458", "kind": "餐飲店家"}, {"id": 16, "name": "Parfaiteria Pal", "address": "日本〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jonishi, 2 Chome−１０−1 南４西２ビル 6F", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=7369372383325116441", "kind": "餐飲店家"}, {"id": 17, "name": "Shibetsu Jingisukan", "address": "日本〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jonishi, 5 Chome−11 モモヤビル 9階", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=3860274221189473683", "kind": "餐飲店家"}, {"id": 18, "name": "Dekitateya Tokeidai Branch", "address": "日本〒060-0001 Hokkaido, Sapporo, Chuo Ward, Kita 1 Jonishi, 2 Chome−1 地下１階", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=16294240662330291639", "kind": "餐飲店家"}, {"id": 19, "name": "Dekitateya", "address": "日本〒060-0032 Hokkaido, Sapporo, Chuo Ward, Kita 2 Johigashi, 5 Chome, 3条館 B1", "area": "其他札幌地區", "url": "https://www.google.com/maps?cid=9763438149276178284", "kind": "餐飲店家"}, {"id": 20, "name": "ひぐま 横丁本店", "address": "日本〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jonishi, 3 Chome ラーメン横丁 内", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=3712619524904285301", "kind": "餐飲店家"}, {"id": 21, "name": "札幌拉麵 悠", "address": "日本〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jonishi, 3 Chome 元祖さっぽろラーメン横丁", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=18191763978182280290", "kind": "餐飲店家"}, {"id": 22, "name": "達摩成吉思汗烤肉 本店", "address": "日本〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jonishi, 4 1F", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=6385867004414801027", "kind": "餐飲店家"}, {"id": 23, "name": "TOKUJU Shinra-tei", "address": "日本〒060-0063 Hokkaido, Sapporo, Chuo Ward, Minami 3 Jonishi, 5 Chome−14 三条美松ビル 2F", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=2365419557294868245", "kind": "餐飲店家"}, {"id": 25, "name": "Soup Curry Treasure", "address": "日本〒060-0062 Hokkaido, Sapporo, Chuo Ward, Minami 2 Jonishi, 1 Chome−8−2 アスカビル １F", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=16942912665032480953", "kind": "餐飲店家"}, {"id": 29, "name": "Soup Curry SAMA Sapporo restaurant", "address": "日本〒060-0063 Hokkaido, Sapporo, Chuo Ward, Minami 3 Jonishi, 5 Chome−33 エリオ狸小路 2Ｆ", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=4923571340165172174", "kind": "餐飲店家"}, {"id": 30, "name": "根室杉山水產 UME堂", "address": "22 Chome-1-26 Kita 11 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0011日本", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=5797662520068342527", "kind": "餐飲店家"}, {"id": 31, "name": "ippo ippo", "address": "22 Chome-1-26 Kita 11 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0011日本", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=1754072547094910669", "kind": "餐飲店家"}, {"id": 32, "name": "cafe BAAL", "address": "3 Chome-8-10 Inaho, Otaru, Hokkaido 047-0032日本", "area": "小樽", "url": "https://www.google.com/maps?cid=5936688750252927636", "kind": "餐飲店家"}, {"id": 33, "name": "SOUP CURRY＆Asian Dining SHANTi（スープカレー&アジアンダイニングシャンティ）", "address": "日本〒060-0042 Hokkaido, Sapporo, Chuo Ward, Odorinishi, 7 Chome−２番2 一階", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=17915969386693004635", "kind": "餐飲店家"}, {"id": 34, "name": "活一鮮 南3条店", "address": "日本〒060-0063 Hokkaido, Sapporo, Chuo Ward, Minami 3 Jonishi, 5 Chome−１−1 ノルベサ地下 1階", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=10649156200873932661", "kind": "餐飲店家"}, {"id": 35, "name": "麺 晄進", "address": "3 Chome-7-12 Inaho, Otaru, Hokkaido 047-0032日本", "area": "小樽", "url": "https://www.google.com/maps?cid=17894082190944094534", "kind": "餐飲店家"}, {"id": 37, "name": "炭火兜 成吉思汗羊肉", "address": "日本〒064-0806 Hokkaido, Sapporo, Chuo Ward, Minami 6 Jonishi, 3 Chome−6−2 TAKARA63ビル 1F", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=2091391372410776287", "kind": "餐飲店家"}, {"id": 38, "name": "Teshikaga Ramen", "address": "日本〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jonishi, 3 Chome, 元祖さっぽろラーメン横丁", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=12372647347263809835", "kind": "餐飲店家"}, {"id": 39, "name": "K.L.I.M Cafe Bar & Ice Cream", "address": "5 Chome-1-3 Minami 6 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0806日本", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=11821115800890246770", "kind": "餐飲店家"}, {"id": 44, "name": "海膽專門店 世壱屋 札幌南二條店", "address": "日本〒060-0052 Hokkaido, Sapporo, Chuo Ward, Minami 2 Johigashi, 1 Chome−１−5", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=16110692947407344397", "kind": "餐飲店家"}, {"id": 45, "name": "海膽專門店 世壱屋 札幌薄野店", "address": "日本〒064-0805 Hokkaido, Sapporo, Chuo Ward, Minami 5 Jonishi, 6 Chome−９−3 1階", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=17223165192436455420", "kind": "餐飲店家"}, {"id": 46, "name": "烏龍麵店 麥彩之丘", "address": "Shinsei, Biei, Kamikawa District, Hokkaido 071-0473日本", "area": "美瑛", "url": "https://www.google.com/maps?cid=3653533007596811326", "kind": "餐飲店家"}, {"id": 49, "name": "丼兵衛 小樽運河店 海鮮丼", "address": "6-5 Minatomachi, Otaru, Hokkaido 047-0007日本", "area": "小樽", "url": "https://www.google.com/maps?cid=4302724863452566859", "kind": "餐飲店家"}, {"id": 52, "name": "初代拉麵店", "address": "14-8 Sumiyoshicho, 住吉町 Otaru, Hokkaido 047-0015日本", "area": "小樽", "url": "https://www.google.com/maps?cid=10786210806709432046", "kind": "餐飲店家"}, {"id": 53, "name": "Kaminari Yoke Shinko", "address": "1 Chome-5-13 Wakamatsu, Otaru, Hokkaido 047-0017日本", "area": "小樽", "url": "https://www.google.com/maps?cid=9945374605355771623", "kind": "餐飲店家"}, {"id": 54, "name": "Soup Curry GARAKU Sapporo Main Restaurant", "address": "日本〒060-0053 Hokkaido, Sapporo, Chuo Ward, Minami 3 Johigashi, 2 Chome−6−1 プレサント南３東２ B1F", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=16775367457305999515", "kind": "餐飲店家"}, {"id": 56, "name": "Yakiniku Tokuju K-Place", "address": "原清單未提供地址，需確認分店", "area": "位置待確認", "url": "https://www.google.com/maps?cid=13465776938075609316", "kind": "餐飲店家"}, {"id": 57, "name": "Tenma", "address": "日本〒060-0005 Hokkaido, Sapporo, Chuo Ward, Kita 5 Jonishi, 3 Chome 札幌ステラプレイス 6F", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=17362745872415911227", "kind": "餐飲店家"}, {"id": 58, "name": "Tenma Sapporo Aurora Town Store", "address": "日本〒060-0042 Hokkaido, Sapporo, Chuo Ward, Odorinishi, 2 Chome, 札幌オーロラタウン内（A-13イ号）", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=9991311556235146328", "kind": "餐飲店家"}, {"id": 59, "name": "牛肉涮涮鍋・壽喜燒專門店 禪", "address": "日本〒060-0062 Hokkaido, Sapporo, Chuo Ward, Minami 2 Jonishi, 1 Chome−７−8 山口中央ビル 地下１階", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=17876793167709087118", "kind": "餐飲店家"}, {"id": 60, "name": "Mohan Dish", "address": "4 Chome-2-10 Kita 24 Jonishi, Kita Ward, Sapporo, Hokkaido 001-0024日本", "area": "其他札幌地區", "url": "https://www.google.com/maps?cid=2630643887560052896", "kind": "餐飲店家"}, {"id": 61, "name": "拉麵 札幌一粒庵", "address": "日本〒060-0004 Hokkaido, Sapporo, Chuo Ward, Kita 4 Jonishi, 1 Chome−1 ホクレンビル 地下１階 パールタウン飲食店街", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=6780397045555705103", "kind": "餐飲店家"}, {"id": 62, "name": "SOUP CURRY KING", "address": "日本〒060-0062 Hokkaido, Sapporo, Chuo Ward, Minami 2 Jonishi, 3 Chome−13-4 カタオカビルB1", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=11288501125129571132", "kind": "餐飲店家"}, {"id": 63, "name": "SOUP CURRY KING ゲートウェイ店", "address": "日本〒060-0806 Hokkaido, Sapporo, Kita Ward, Kita 6 Jonishi, 6 Chome−2−4 にしろくビル 1F", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=16209130670881878936", "kind": "餐飲店家"}, {"id": 64, "name": "札幌円山JIN燒肉", "address": "23 Chome-5-12 Minami 6 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0806日本", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=8696715763047320413", "kind": "餐飲店家"}, {"id": 65, "name": "Tiger Curry Akarenga Terrace", "address": "フードコート3 Val Terrace, 4 Chome-１番地 Kita 2 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0002日本", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=11692676460926941968", "kind": "餐飲店家"}, {"id": 70, "name": "小樽茶屋 里 本店", "address": "2-12 Sakaimachi, Otaru, Hokkaido 047-0027日本", "area": "小樽", "url": "https://www.google.com/maps?cid=12267204691831726083", "kind": "餐飲店家"}, {"id": 71, "name": "Wagyu Seafood Natural Tuna Specialty Store Toimaguro", "address": "1 Chome-12-2 Ironai, Otaru, Hokkaido 047-0031日本", "area": "小樽", "url": "https://www.google.com/maps?cid=2305779359452209885", "kind": "餐飲店家"}, {"id": 72, "name": "小樽海鮮処 そら", "address": "日本〒047-0032 Hokkaido, Otaru, Inaho, 3 Chome−11−1 小樽中央市場ビル 内", "area": "小樽", "url": "https://www.google.com/maps?cid=11908434649976579453", "kind": "餐飲店家"}, {"id": 73, "name": "Jingisukan Namara", "address": "日本〒060-0063 Hokkaido, Sapporo, Chuo Ward, Minami 3 Jonishi, 1 Chome−３−3 マルビル", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=16580951570926154279", "kind": "餐飲店家"}, {"id": 75, "name": "旭川成吉思汗大黑屋 札幌3號店", "address": "日本〒060-0063 Hokkaido, Sapporo, Chuo Ward, Minami 3 Jonishi, 2 Chome−16−5 藤栄ビル F15 1階", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=4156270919573812815", "kind": "餐飲店家"}, {"id": 76, "name": "Kiwami Super Aged Charcoal-Grilled Yakiniku Shibuki", "address": "日本〒060-0063 Hokkaido, Sapporo, Chuo Ward, Minami 3 Jonishi, 4 Chome カミヤビル １F", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=7299099271086552457", "kind": "餐飲店家"}, {"id": 77, "name": "Parfait Shop NANAKAMADOU", "address": "日本〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jonishi, 5 Chome−10 第４藤井ビル 2階", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=10941545784007158437", "kind": "餐飲店家"}, {"id": 78, "name": "Suage+ Soup Curry", "address": "日本〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jonishi, 5 Chome−6-1 都志松ビル ２階", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=10502422655510800755", "kind": "餐飲店家"}, {"id": 79, "name": "拉麵 獅子王", "address": "日本〒064-0806 Hokkaido, Sapporo, Chuo Ward, Minami 6 Jonishi, 4 Chome−５−8 山形会館 1F", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=18178962106038508446", "kind": "餐飲店家"}, {"id": 80, "name": "信玄拉麵", "address": "日本〒064-0806 Hokkaido, Sapporo, Chuo Ward, Minami 6 Jonishi, 8 Chome−８−2", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=11307649988743543203", "kind": "餐飲店家"}, {"id": 81, "name": "nana's green tea 札幌パルコ店", "address": "日本〒060-0061 Hokkaido, Sapporo, Chuo Ward, Minami 1 Jonishi, 3 Chome 札幌パルコ ５階", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=12125072251813745105", "kind": "餐飲店家"}, {"id": 82, "name": "Bar Penguin-dou", "address": "1 Chome-6-1 Minami 4 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0804日本", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=14490153014203141450", "kind": "餐飲店家"}, {"id": 83, "name": "森彥咖啡", "address": "26 Chome-2-18 Minami 2 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0802日本", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=5200756221303637729", "kind": "餐飲店家"}, {"id": 84, "name": "Mermaid Coffee roasters - Sapporo", "address": "1 Chome-12-7 Minami 3 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0063日本", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=2995210069320550789", "kind": "餐飲店家"}, {"id": 89, "name": "Ramen Sapporo Akahoshi", "address": "日本〒060-0063 Hokkaido, Sapporo, Chuo Ward, Minami 3 Jonishi, 7 Chome−１", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=952710002196322066", "kind": "餐飲店家"}, {"id": 91, "name": "スープカレーGARAKU sitatte sapporo店", "address": "日本〒060-0002 Hokkaido, Sapporo, Chuo Ward, Kita 2 Jonishi, 3 Chome−1−20 B1F", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=9690026349655528697", "kind": "餐飲店家"}, {"id": 101, "name": "旭川成吉思汗大黑屋 札幌1號店", "address": "日本〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jonishi, 2 Chome−10 南４西２ビル 2階", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=3867848181007049944", "kind": "餐飲店家"}, {"id": 106, "name": "らーめん 西や 小樽駅前店", "address": "日本〒047-0032 Hokkaido, Otaru, Inaho, 3 Chome−10−21 昭和ビル 2F", "area": "小樽", "url": "https://www.google.com/maps?cid=7014292452045500847", "kind": "餐飲店家"}, {"id": 107, "name": "Takinami Donburi Restaurant — Donburi of Otaru North", "address": "3 Chome-10-16 Inaho, Otaru, Hokkaido 047-0032日本", "area": "小樽", "url": "https://www.google.com/maps?cid=1689937164847198666", "kind": "餐飲店家"}, {"id": 109, "name": "北海道燒肉 KITAUSHI", "address": "4 Chome-5-7 Minami 6 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0806日本", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=2997067923525385762", "kind": "餐飲店家"}, {"id": 112, "name": "若鶏時代 なると 本店", "address": "3 Chome-16-13 Inaho, Otaru, Hokkaido 047-0032日本", "area": "小樽", "url": "https://www.google.com/maps?cid=8896147539216171636", "kind": "餐飲店家"}, {"id": 113, "name": "札幌拉麵 葉隱", "address": "5 Chome-1-3 Minami 6 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0806日本", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=5700296062475898799", "kind": "餐飲店家"}, {"id": 114, "name": "雪印冰淇淋 札幌本店", "address": "日本〒060-0002 Hokkaido, Sapporo, Chuo Ward, Kita 2 Jonishi, 3 Chome−１−31 太陽生命札幌ビル 1階", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=13476043490693863429", "kind": "餐飲店家"}, {"id": 115, "name": "六花亭 札幌本店", "address": "6 Chome-3-3 Kita 4 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0004日本", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=7699630425760249374", "kind": "餐飲店家"}, {"id": 117, "name": "Medicineman", "address": "日本〒064-0912 Hokkaido, Sapporo, Chuo Ward, Minami 12 Jonishi, 10 Chome−1−18 1F", "area": "其他札幌地區", "url": "https://www.google.com/maps?cid=448541617877329935", "kind": "餐飲店家"}, {"id": 118, "name": "GELATERIA La Giostra", "address": "7 Chome-7 Minami 3 Jonishi, Chuo Ward, Sapporo, Hokkaido 060-0063日本", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=8016082206818410597", "kind": "餐飲店家"}, {"id": 119, "name": "北大 Marche Café & Labo", "address": "日本〒060-0809 Hokkaido, Sapporo, Kita Ward, Kita 9 Jonishi, 5 Chome 1階 北海道大学", "area": "札幌站・北大", "url": "https://www.google.com/maps?cid=17283725216005937942", "kind": "餐飲店家"}, {"id": 130, "name": "Numa No Ya", "address": "145 Onumacho, Nanae, Kameda District, Hokkaido 041-1354日本", "area": "大沼・本次路線外", "url": "https://www.google.com/maps?cid=16289505425784233282", "kind": "餐飲店家"}, {"id": 133, "name": "Donguri Odori", "address": "日本〒060-0042 Hokkaido, Sapporo, Chuo Ward, Odorinishi, 1 Chome−13 ル・トロワ １階", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=7344164517148295281", "kind": "餐飲店家"}, {"id": 134, "name": "蝦味拉麵 一幻 總本店", "address": "9 Chome-1024-10 Minami 7 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0807日本", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=133821498680476131", "kind": "餐飲店家"}, {"id": 136, "name": "RAZAN焼肉レストランすすきの南4条店", "address": "日本〒064-0804 Hokkaido, Sapporo, Chuo Ward, Minami 4 Jonishi, 2 Chome−2-4 RECOLTE SAPPORO1F", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=4979831451050153258", "kind": "餐飲店家"}, {"id": 137, "name": "Hyousetsu No Mon", "address": "2 Chome-8-10 Minami 5 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0805日本", "area": "薄野・中島公園", "url": "https://www.google.com/maps?cid=6789083509554852267", "kind": "餐飲店家"}, {"id": 138, "name": "Shihachi Sengyoten Takuki COMICHI", "address": "日本〒060-0062 Hokkaido, Sapporo, Chuo Ward, Minami 2 Jonishi, 2 Chome−５ COMICHI内", "area": "大通・狸小路", "url": "https://www.google.com/maps?cid=15387178759018764898", "kind": "餐飲店家"}, {"id": 140, "name": "迴轉壽司 Toriton 豐平店", "address": "6 Chome-1-10 Toyohira 4 Jo, Toyohira Ward, Sapporo, Hokkaido 062-0904日本", "area": "其他札幌地區", "url": "https://www.google.com/maps?cid=172791602120061703", "kind": "餐飲店家"}, {"id": 141, "name": "迴轉壽司 Toriton 平岸店", "address": "15 Chome-4-23 Hiragishi 2 Jo, Toyohira Ward, Sapporo, Hokkaido 062-0932日本", "area": "其他札幌地區", "url": "https://www.google.com/maps?cid=7773101100054591983", "kind": "餐飲店家"}, {"id": 142, "name": "迴轉壽司 Toriton 圓山店", "address": "23 Chome-2-17 Kita 4 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0824日本", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=7075063398402297340", "kind": "餐飲店家"}, {"id": 143, "name": "Professor Maruyama Curry", "address": "21 Chome-1-27 Minami 4 Jonishi, Chuo Ward, Sapporo, Hokkaido 064-0804日本", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=2223522501169677159", "kind": "餐飲店家"}, {"id": 160, "name": "POP/iN", "address": "18 Chome-1 Odorinishi, Chuo Ward, Sapporo, Hokkaido 060-0042日本", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=3775760230098546370", "kind": "餐飲店家"}, {"id": 48, "name": "CENTRAL WHOLESALE SEAFOOD MARKET", "address": "日本〒060-0011 Hokkaido, Sapporo, Chuo Ward, Kita 11 Jonishi, 21 Chome−1−7 ウエストコート２１ 214", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=16843740269574437518", "kind": "美食街／市場"}, {"id": 50, "name": "小樽出拔小路", "address": "1 Chome-1-1 Ironai, Otaru, Hokkaido 047-0031日本", "area": "小樽", "url": "https://www.google.com/maps?cid=17015246586440730198", "kind": "美食街／市場"}, {"id": 108, "name": "Sankaku Market", "address": "日本〒047-0032 Hokkaido, Otaru, Inaho, 3 Chome−10−16 三角市場内", "area": "小樽", "url": "https://www.google.com/maps?cid=18281937072950691954", "kind": "美食街／市場"}, {"id": 139, "name": "北海道札幌中央市場-場外市場", "address": "日本〒060-0011 Hokkaido, Sapporo, Chuo Ward, Kita 11 Jonishi, 21 Chome−2−3 第八卸売市場", "area": "圓山・場外市場", "url": "https://www.google.com/maps?cid=12537058516644936695", "kind": "美食街／市場"}]</script>
-<script id="trip-data" type="application/json">[{"title": "初見札幌，冬日出發", "rows": [["0630\n0650", "Wen家 -機場", "開車預計50分鐘\n*上班時段,可考慮提早出門", "", "提早至機場報到+行李寄放"], ["0930-1405", "桃園機場第2航廈", "飛機BR116  TPE-CTS\n(桃園機場-札幌新千歲機場)", "", "*已劃位 \n*提前48小時內可線上報到"], ["1410-1500", "", "入境、拿行李、海關申報", "", "*提前至Visit Japan Web 官網\n填寫資料"], ["1500-1630", "機場-札幌車站", "JR  約50mins  (B1 ，JR新千歲空港站", "2230日幣", "備案: 機場巴士  約1hr\n(1F ，國內線的14、22或國際線的84停靠站上車"], ["", "札幌車站-\nMYSTAYS 札幌公園精品酒店", "(約15mins)(經過3站)\n地鐵南北線 札幌（札幌市營）-中島公園", "210日幣", ""], ["", "MYSTAYS 札幌公園精品酒店", "HOTEL MYSTAYS PREMIER Sapporo Park  住宿日期:12/11-12/24 共13晚\n地址：2-2-10 Nishi, Minami 9-jo, Chuo-ku, Sapporo-shi, Hokkaido 064-0809 Japan \n電話：+81-11-512-3456       Check in /out 時間：15:00後/11:00前", "", ""], ["", "安全帽\n&\n雪靴", "最近車站:大通公園\nBurton 營業時間1100-1900 (周三公休)\n------------------------------------------------\nMurasaki Sports Sapporo Pivot Shop(PARCO 四樓)\n營業時間1000-2000 記得用雪風的折扣!!!!", "", "*一定要記得!!!\n帶著雪鏡&穿雪襪\n\n札幌-大通-薄野-中島公園"], ["", "Nanazugurinti Sapporoparukoten", "在PARCO 五樓，有芝麻甜點!!!!!", "", "營業時間1000-2000"], ["", "晚餐", "SOUP CURRY KING", "", ""], ["", "藥妝購買", "鶴羽藥妝 狸小路5丁目店(網路都說這家最便宜\n大國藥妝ダイコクドラッグメガ狸小路店\n足休時間/野菜酵素/GABA…(看缺什麼)", "", "記得用優惠券\n不退稅的才買"], ["", "狸小路商店街", "唐吉訶德 稍微逛一下", "", "大通-薄野(從1丁目到7丁目)"], ["", "GELATERIA La Giostra", "只有營業五六2000-2400的超好吃義式冰淇淋", "", ""]]}, {"title": "神宮散步與聖誕燈光", "rows": [["0800-0830", "飯店", "起床盥洗準備", "", ""], ["0830-0900", "飯店-\n札幌市場外市場", "(約需40mins)\n南北線 中島公園-大通\n東西線 大通-二十四軒車站", "", ""], ["0900-1000", "札幌中央市場-場外市場", "推薦店家:根室杉山水產 UME堂", "", "*吃帝王蟹(公"], ["1000-1100", "場外市場-\n北海道神宮", "(約需花費 40 mins)\n地下鐵南北線  中島公園站-大通\n地下鐵東西線  大通-圓山公園站", "", ""], ["1100-1200", "北海道神宮", "", "", "*幸福水晶御守!!!"], ["1200-1300", "神宮茶屋 +\n圓山公園", "必吃霜淇淋/茶餅", "", ""], ["1300-1400", "円山動物園", "地鐵 東西線 圓山公園站3號出口 步行15mins\n(也可出站轉搭巴士円15 ，再步行7mins)", "800日幣", "營業時間0930-1600 週三休息"], ["1400-1600", "POP/iN", "芝麻布丁", "", "營業時間0800-1900"], ["1", "午晚餐", "極み超熟成炭火焼肉しぶき", "", "營業時間1700-0000"], ["", "札幌電視台", "觀景台\n大通站27 號出口步行約 1 分鐘", "1200日幣", "至 3 樓購買門票並搭乘直達電梯"], ["", "大通公園", "逛街+欣賞冬季燈飾", "", ""], ["", "晚點心", "慕尼黑聖誕市集吃東西 ~~", "", ""]]}, {"title": "小樽的玻璃與甜點", "rows": [["0800-\n0830", "飯店", "起床盥洗準備", "", ""], ["0830-\n0900", "飯店-手稻神社", "(約需40mins)\n地下鐵南北線  中島公園站-札幌（札幌市營）\nJR快速機場線 札幌車站-手稻 (南口出口2步行)", "1570日幣", "三、四號月台"], ["0900-1000", "手稻神社", "營業時間:0900-1700", "", "滑雪安全御守(直接到鳥居旁邊茶色「神社事務所（授與所）」購買"], ["1000-1100", "手稻神社-小樽", "(約需40mins)\nJR快速機場線 -手稻-南小樽", "580日幣", ""], ["1100-1200", "午餐", "初代拉麵店\n(每天限量20碗的白醬油拉麵", "", "營業時間11:00"], ["1200-1700", "小樽觀光", "小樽音樂盒堂本館\n必拍經典街景──童話十字路口\n北一硝子三號館 (玻璃製品)\n堺町通商店街\n北菓樓 小樽本館(必吃泡芙!!!!!!)(10:00營業\n六花亭（小樽運河店）\n起司蛋糕名店LeTAO(咖啡廳限定巧克力蛋糕)\n小樽運河搭船(?", "", ""], ["", "小樽", "小樽站-", "", ""], ["1730-1830", "晚餐", "cafe BAAL  超好吃牛排飯!!!!", "", "營業時間1130-1430/1730-1930"], ["", "小樽站-飯店", "", "", ""]]}, {"title": "手稻，與雪初相見", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", "0805上車"], ["0800-\n0930", "手稻滑雪場", "(今天先練習適應雪板)", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", "16.10上車 /15.30準備收工"], ["", "晚餐", "Suage+ Soup Curry/ Rojiura Curry SAMURAI\n(兩間在附近）", "", ""]]}, {"title": "手稻滑雪・教練課", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", "0805上車"], ["0800-\n0930", "手稻滑雪場", "家瑜上教練課  (教練課0930-1530 /含一小時休息)", "", "*教練課共5小時"], ["", "滑雪場-回飯店", "回到飯店約5:30", "", "16.10上車 /15.30準備收工"], ["", "晚餐", "Kiwami Super Aged Charcoal-Grilled Yakiniku Shibuki\n極み超熟成炭火焼肉しぶき", "", ""]]}, {"title": "再滑一趟手稻", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", "0805上車"], ["0800-\n0930", "手稻滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", "16.10上車 /15.30準備收工"], ["", "晚餐", "達摩 成吉思汗/旭川成吉思汗大黑屋 札幌2號店\n(兩間在附近)", "", ""]]}, {"title": "札幌散策・藻岩山夜景", "rows": [["0800-0830", "飯店", "起床盥洗準備", "", ""], ["0900-\n0930", "郵局", "買新年限定小羊(各郵局都有販售", "", "營業時間:平日900-1700"], ["0930\n1000-", "諏訪神社", "地鐵東豐線「北13條東站」步行約 3 分鐘", "", "以夢幻花手水、銀喉長尾山雀御守及三麗鷗御守"], ["10:00-\n11:30", "北海道大學綜合博物館", "位於北海道大學校區內的「百年記念會館」1樓", "", ""], ["", "北大 Marche Café & Labo", "霜淇淋、gelato、人氣起司蛋糕", "", "營業時間:1000-1600"], ["1300-1400", "午餐", "焼肉徳寿 札幌駅前店 (午間套餐划算~~~", "", "營業時間(中午)1130-1430"], ["1400-1500", "北海道廳舊本廳舍 紅磚廳舍", "自己做白色戀人磁鐵~", "", ""], ["", "", "步行前往「西4丁目」電車站（約 12 分鐘）\n搭路面電車，坐到「ロープウェイ入口（纜車入口站，SC19）」下車，下車後步行10mins前往山麓站", "230日幣", "*馬路中央就是路面電車的「西4丁目（SC01）」月台。選擇往「外回り（順時針方向）」（往中央區役所前、西線16條方向）的月台上車"], ["", "藻岩山", "(約需1 hr)\n札幌市電（路面電車）\n在「纜車入口站（ロープウェイ入口）」下車", "", "*日落時間預計1600\n建議1400左右從市區出發"], ["", "藻岩山夜景", "兩段式的交通工具：\n第一段是「空中纜車」\n第二段是「莫里斯號（迷你纜車）」。\n現在網路上買到的套票通常是包含這兩段的來回車票。", "", "夜景門票2100日幣(KLOOK先買!!!)"], ["", "Lumière et ombre", "超好吃的巧克力專賣店", "", "營業時間1100-1800/二、三公休\n\n*看要不要先去這家，再看夜景"], ["", "晚餐", "拉麵-薄野拉麵街挑一間", "", ""]]}, {"title": "札幌國際滑雪日", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-札幌國際滑雪場", "", "", ""], ["0800-\n0930", "札幌國際滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", ""], ["", "晚餐", "達摩 成吉思汗/旭川成吉思汗大黑屋 札幌2號店\n(兩間在附近)", "", ""]]}, {"title": "購物與花小兔挖寶", "rows": [["", "飯店", "起床盥洗準備", "", ""], ["", "札幌護國神社", "", "", "尾山雀禦朱印簿 & 蕾絲護身符"], ["", "薄野站", "", "", ""], ["", "駿河屋札幌 NORBESA 店", "", "", "在附近"], ["", "Mandarake札幌店", "NORBESA大樓 2F", "", "在附近"], ["", "狸小路商店街", "", "", ""], ["", "札幌PARCO", "4F  Murasaki Sports Sapporo Pivot Shop\n5F & 6F   無印良品（MUJI）\n7F 橡子共和國、扭蛋店", "", "*5樓有必吃的芝麻甜點!!\n(Murasaki Sports Sapporo Pivot Shop"], ["", "Lashinbang 札幌店", "", "", "在附近"], ["", "BOOKOFF Sapporo Minami 2 Jo Store", "", "", "在附近"], ["", "安利美特 札幌店", "", "", "在附近"], ["", "午餐", "看剛好逛到哪裡決定~", "", ""], ["", "地下大型商場APIA", "連通地鐵札幌站與 STELLAR PLACE 的地下商場\n南口廣場上知名的玻璃圓錐地標，也是 APIA 其中一個入口！分為 CENTER和 WEST 兩個區塊", "", "B1F  Sanrio 札幌 APIA 店\nB1F路地裏 Curry 侍. 湯咖哩"], ["", "札幌東急百貨店", "位於南口附近，與地鐵札幌站地下通道連結", "", "5F & 6F  BIC CAMERA 札幌店\n7F  UNIQLO、GU\n8F HANDS(生活雜貨店) \n9F 扭蛋店、夾娃娃、拍貼"], ["", "DAIMARU \n大丸百貨", "位於札幌車站車站西側，可直通 JR 札幌站", "", "8F Pokémon Center Sapporo \n*札幌限定徽章"], ["", "STELLAR PLACE", "位於札幌車站南側，分為 CENTER 與 EAST 兩棟\n可直通 JR 札幌站與地下街\n3F THE NORTH FACE+\n5F 迪士尼商店\n6F根室花丸 (超人氣迴轉壽司店", "", ""], ["", "JR塔展望室T38", "", "740日幣", "先到 STELLAR PLACE CENTER 6樓買門票，再搭電梯即可直達38樓"], ["", "晚餐", "迴轉壽司 根室花丸 JR Tower Stellar Place店", "", ""], ["", "K.L.I.M Cafe Bar & Ice Cream", "靠近薄野車站 \n一定要吃到!!!!!!!芝麻聖代", "", "營業時間1800-0230"]]}, {"title": "富良野・美瑛雪國小旅行", "rows": [["", "飯店", "起床盥洗準備", "", ""], ["0720-\n0730", "飯店-\n大通地鐵站\n31號出口集合", "", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "美瑛聖誕樹", "", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "四季彩之丘", "自費體驗雪上摩托車\n單人座¥15,000／臺、雙人座¥20,000／臺", "", "現金多帶!!!!!!"], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "午餐", "", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "白鬚瀑布", "", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "休息站", "(會有一碗玉米濃湯XD", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "森林精靈露臺", "", "", ""], ["1750", "回程", "粗估1.5hr", "", ""], ["", "晚餐", "", "", ""]]}, {"title": "手稻滑雪日 ④", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", ""], ["0800-\n0930", "手稻滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", ""], ["", "晚餐", "", "", ""]]}, {"title": "手稻滑雪日 ⑤", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", ""], ["0800-\n0930", "手稻滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", ""], ["", "晚餐", "", "", ""]]}, {"title": "最後一日，滑個過癮", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", ""], ["0800-\n0930", "手稻滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", ""], ["", "晚餐", "", "", ""]]}, {"title": "帶著回憶回家", "rows": [["0730-0800", "MYSTAYS 札幌公園精品酒店", "收拾行李\nCheck out", "", ""], ["", "MYSTAYS 札幌公園精品酒店-\n札幌車站", "(約15mins)(經過3站)\n中島公園-札幌（札幌市營）", "210日幣", ""], ["", "札幌車站", "", "", ""], ["", "札幌車站-\n新千歲機場", "(車程約45mins)\n\n機場快速Airport號\n(月台在5或6)", "", ""], ["0930-1405", "新千歲機場", "提早報到+退稅後托運\n多餘時間可逛+買\n*退稅新制，待11月研究", "", ""], ["1520-1855", "新千歲機場-\n桃園機場", "0320-0705飛機BR115 CTS-TPE\n(札幌新千歲機場-桃園機場)", "", ""]]}]</script>
+<script id="trip-data" type="application/json">[{"title": "初見札幌，冬日出發", "rows": [["0630\n0650", "Wen家 -機場", "開車預計50分鐘\n*上班時段,可考慮提早出門", "", "提早至機場報到+行李寄放"], ["09:30–14:05", "桃園機場第2航廈", "長榮航空 BR116｜TPE → CTS\n09:30 桃園機場起飛（台灣時間）\n14:05 新千歲機場抵達（日本時間）\n飛行時間：3 小時 35 分鐘", "", "*已劃位 \n*提前48小時內可線上報到"], ["1410-1500", "", "入境、拿行李、海關申報", "", "*提前至Visit Japan Web 官網\n填寫資料"], ["1500-1630", "機場-札幌車站", "JR  約50mins  (B1 ，JR新千歲空港站", "2230日幣", "備案: 機場巴士  約1hr\n(1F ，國內線的14、22或國際線的84停靠站上車"], ["", "札幌車站-\nMYSTAYS 札幌公園精品酒店", "(約15mins)(經過3站)\n地鐵南北線 札幌（札幌市營）-中島公園", "210日幣", ""], ["", "MYSTAYS 札幌公園精品酒店", "HOTEL MYSTAYS PREMIER Sapporo Park  住宿日期:12/11-12/24 共13晚\n地址：2-2-10 Nishi, Minami 9-jo, Chuo-ku, Sapporo-shi, Hokkaido 064-0809 Japan \n電話：+81-11-512-3456       Check in /out 時間：15:00後/11:00前", "", ""], ["", "安全帽\n&\n雪靴", "最近車站:大通公園\nBurton 營業時間1100-1900 (周三公休)\n------------------------------------------------\nMurasaki Sports Sapporo Pivot Shop(PARCO 四樓)\n營業時間1000-2000 記得用雪風的折扣!!!!", "", "*一定要記得!!!\n帶著雪鏡&穿雪襪\n\n札幌-大通-薄野-中島公園"], ["", "Nanazugurinti Sapporoparukoten", "在PARCO 五樓，有芝麻甜點!!!!!", "", "營業時間1000-2000"], ["", "晚餐", "SOUP CURRY KING", "", ""], ["", "藥妝購買", "鶴羽藥妝 狸小路5丁目店(網路都說這家最便宜\n大國藥妝ダイコクドラッグメガ狸小路店\n足休時間/野菜酵素/GABA…(看缺什麼)", "", "記得用優惠券\n不退稅的才買"], ["", "狸小路商店街", "唐吉訶德 稍微逛一下", "", "大通-薄野(從1丁目到7丁目)"], ["", "GELATERIA La Giostra", "只有營業五六2000-2400的超好吃義式冰淇淋", "", ""]]}, {"title": "神宮散步與聖誕燈光", "rows": [["0800-0830", "飯店", "起床盥洗準備", "", ""], ["0830-0900", "飯店-\n札幌市場外市場", "(約需40mins)\n南北線 中島公園-大通\n東西線 大通-二十四軒車站", "", ""], ["0900-1000", "札幌中央市場-場外市場", "推薦店家:根室杉山水產 UME堂", "", "*吃帝王蟹(公"], ["1000-1100", "場外市場-\n北海道神宮", "(約需花費 40 mins)\n地下鐵南北線  中島公園站-大通\n地下鐵東西線  大通-圓山公園站", "", ""], ["1100-1200", "北海道神宮", "", "", "*幸福水晶御守!!!"], ["1200-1300", "神宮茶屋 +\n圓山公園", "必吃霜淇淋/茶餅", "", ""], ["1300-1400", "円山動物園", "地鐵 東西線 圓山公園站3號出口 步行15mins\n(也可出站轉搭巴士円15 ，再步行7mins)", "800日幣", "營業時間0930-1600 週三休息"], ["1400-1600", "POP/iN", "芝麻布丁", "", "營業時間0800-1900"], ["1", "午晚餐", "極み超熟成炭火焼肉しぶき", "", "營業時間1700-0000"], ["", "札幌電視台", "觀景台\n大通站27 號出口步行約 1 分鐘", "1200日幣", "至 3 樓購買門票並搭乘直達電梯"], ["", "大通公園", "逛街+欣賞冬季燈飾", "", ""], ["", "晚點心", "慕尼黑聖誕市集吃東西 ~~", "", ""]]}, {"title": "小樽的玻璃與甜點", "rows": [["0800-\n0830", "飯店", "起床盥洗準備", "", ""], ["0830-\n0900", "飯店-手稻神社", "(約需40mins)\n地下鐵南北線  中島公園站-札幌（札幌市營）\nJR快速機場線 札幌車站-手稻 (南口出口2步行)", "1570日幣", "三、四號月台"], ["0900-1000", "手稻神社", "營業時間:0900-1700", "", "滑雪安全御守(直接到鳥居旁邊茶色「神社事務所（授與所）」購買"], ["1000-1100", "手稻神社-小樽", "(約需40mins)\nJR快速機場線 -手稻-南小樽", "580日幣", ""], ["1100-1200", "午餐", "初代拉麵店\n(每天限量20碗的白醬油拉麵", "", "營業時間11:00"], ["1200-1700", "小樽觀光", "小樽音樂盒堂本館\n必拍經典街景──童話十字路口\n北一硝子三號館 (玻璃製品)\n堺町通商店街\n北菓樓 小樽本館(必吃泡芙!!!!!!)(10:00營業\n六花亭（小樽運河店）\n起司蛋糕名店LeTAO(咖啡廳限定巧克力蛋糕)\n小樽運河搭船(?", "", ""], ["", "小樽", "小樽站-", "", ""], ["1730-1830", "晚餐", "cafe BAAL  超好吃牛排飯!!!!", "", "營業時間1130-1430/1730-1930"], ["", "小樽站-飯店", "", "", ""]]}, {"title": "手稻，與雪初相見", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", "0805上車"], ["0800-\n0930", "手稻滑雪場", "(今天先練習適應雪板)", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", "16.10上車 /15.30準備收工"], ["", "晚餐", "Suage+ Soup Curry/ Rojiura Curry SAMURAI\n(兩間在附近）", "", ""]]}, {"title": "手稻滑雪・教練課", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", "0805上車"], ["0800-\n0930", "手稻滑雪場", "家瑜上教練課  (教練課0930-1530 /含一小時休息)", "", "*教練課共5小時"], ["", "滑雪場-回飯店", "回到飯店約5:30", "", "16.10上車 /15.30準備收工"], ["", "晚餐", "Kiwami Super Aged Charcoal-Grilled Yakiniku Shibuki\n極み超熟成炭火焼肉しぶき", "", ""]]}, {"title": "再滑一趟手稻", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", "0805上車"], ["0800-\n0930", "手稻滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", "16.10上車 /15.30準備收工"], ["", "晚餐", "達摩 成吉思汗/旭川成吉思汗大黑屋 札幌2號店\n(兩間在附近)", "", ""]]}, {"title": "札幌散策・藻岩山夜景", "rows": [["0800-0830", "飯店", "起床盥洗準備", "", ""], ["0900-\n0930", "郵局", "買新年限定小羊(各郵局都有販售", "", "營業時間:平日900-1700"], ["0930\n1000-", "諏訪神社", "地鐵東豐線「北13條東站」步行約 3 分鐘", "", "以夢幻花手水、銀喉長尾山雀御守及三麗鷗御守"], ["10:00-\n11:30", "北海道大學綜合博物館", "位於北海道大學校區內的「百年記念會館」1樓", "", ""], ["", "北大 Marche Café & Labo", "霜淇淋、gelato、人氣起司蛋糕", "", "營業時間:1000-1600"], ["1300-1400", "午餐", "焼肉徳寿 札幌駅前店 (午間套餐划算~~~", "", "營業時間(中午)1130-1430"], ["1400-1500", "北海道廳舊本廳舍 紅磚廳舍", "自己做白色戀人磁鐵~", "", ""], ["", "", "步行前往「西4丁目」電車站（約 12 分鐘）\n搭路面電車，坐到「ロープウェイ入口（纜車入口站，SC19）」下車，下車後步行10mins前往山麓站", "230日幣", "*馬路中央就是路面電車的「西4丁目（SC01）」月台。選擇往「外回り（順時針方向）」（往中央區役所前、西線16條方向）的月台上車"], ["", "藻岩山", "(約需1 hr)\n札幌市電（路面電車）\n在「纜車入口站（ロープウェイ入口）」下車", "", "*日落時間預計1600\n建議1400左右從市區出發"], ["", "藻岩山夜景", "兩段式的交通工具：\n第一段是「空中纜車」\n第二段是「莫里斯號（迷你纜車）」。\n現在網路上買到的套票通常是包含這兩段的來回車票。", "", "夜景門票2100日幣(KLOOK先買!!!)"], ["", "Lumière et ombre", "超好吃的巧克力專賣店", "", "營業時間1100-1800/二、三公休\n\n*看要不要先去這家，再看夜景"], ["", "晚餐", "拉麵-薄野拉麵街挑一間", "", ""]]}, {"title": "札幌國際滑雪日", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-札幌國際滑雪場", "", "", ""], ["0800-\n0930", "札幌國際滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", ""], ["", "晚餐", "達摩 成吉思汗/旭川成吉思汗大黑屋 札幌2號店\n(兩間在附近)", "", ""]]}, {"title": "購物與花小兔挖寶", "rows": [["", "飯店", "起床盥洗準備", "", ""], ["", "札幌護國神社", "", "", "尾山雀禦朱印簿 & 蕾絲護身符"], ["", "薄野站", "", "", ""], ["", "駿河屋札幌 NORBESA 店", "", "", "在附近"], ["", "Mandarake札幌店", "NORBESA大樓 2F", "", "在附近"], ["", "狸小路商店街", "", "", ""], ["", "札幌PARCO", "4F  Murasaki Sports Sapporo Pivot Shop\n5F & 6F   無印良品（MUJI）\n7F 橡子共和國、扭蛋店", "", "*5樓有必吃的芝麻甜點!!\n(Murasaki Sports Sapporo Pivot Shop"], ["", "Lashinbang 札幌店", "", "", "在附近"], ["", "BOOKOFF Sapporo Minami 2 Jo Store", "", "", "在附近"], ["", "安利美特 札幌店", "", "", "在附近"], ["", "午餐", "看剛好逛到哪裡決定~", "", ""], ["", "地下大型商場APIA", "連通地鐵札幌站與 STELLAR PLACE 的地下商場\n南口廣場上知名的玻璃圓錐地標，也是 APIA 其中一個入口！分為 CENTER和 WEST 兩個區塊", "", "B1F  Sanrio 札幌 APIA 店\nB1F路地裏 Curry 侍. 湯咖哩"], ["", "札幌東急百貨店", "位於南口附近，與地鐵札幌站地下通道連結", "", "5F & 6F  BIC CAMERA 札幌店\n7F  UNIQLO、GU\n8F HANDS(生活雜貨店) \n9F 扭蛋店、夾娃娃、拍貼"], ["", "DAIMARU \n大丸百貨", "位於札幌車站車站西側，可直通 JR 札幌站", "", "8F Pokémon Center Sapporo \n*札幌限定徽章"], ["", "STELLAR PLACE", "位於札幌車站南側，分為 CENTER 與 EAST 兩棟\n可直通 JR 札幌站與地下街\n3F THE NORTH FACE+\n5F 迪士尼商店\n6F根室花丸 (超人氣迴轉壽司店", "", ""], ["", "JR塔展望室T38", "", "740日幣", "先到 STELLAR PLACE CENTER 6樓買門票，再搭電梯即可直達38樓"], ["", "晚餐", "迴轉壽司 根室花丸 JR Tower Stellar Place店", "", ""], ["", "K.L.I.M Cafe Bar & Ice Cream", "靠近薄野車站 \n一定要吃到!!!!!!!芝麻聖代", "", "營業時間1800-0230"]]}, {"title": "富良野・美瑛雪國小旅行", "rows": [["", "飯店", "起床盥洗準備", "", ""], ["0720-\n0730", "飯店-\n大通地鐵站\n31號出口集合", "", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "美瑛聖誕樹", "", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "四季彩之丘", "自費體驗雪上摩托車\n單人座¥15,000／臺、雙人座¥20,000／臺", "", "現金多帶!!!!!!"], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "午餐", "", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "白鬚瀑布", "", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "休息站", "(會有一碗玉米濃湯XD", "", ""], ["搭\n乘\n遊\n覽\n車\n團\n體\n行\n動", "森林精靈露臺", "", "", ""], ["1750", "回程", "粗估1.5hr", "", ""], ["", "晚餐", "", "", ""]]}, {"title": "手稻滑雪日 ④", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", ""], ["0800-\n0930", "手稻滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", ""], ["", "晚餐", "", "", ""]]}, {"title": "手稻滑雪日 ⑤", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", ""], ["0800-\n0930", "手稻滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", ""], ["", "晚餐", "", "", ""]]}, {"title": "最後一日，滑個過癮", "rows": [["0700-\n0800", "飯店", "起床盥洗準備", "", ""], ["0800", "飯店-手稻滑雪場", "接駁車!!!!!!!!!", "", ""], ["0800-\n0930", "手稻滑雪場", "", "", ""], ["", "滑雪場-回飯店", "回到飯店約5:30", "", ""], ["", "晚餐", "", "", ""]]}, {"title": "帶著回憶回家", "rows": [["0730-0800", "MYSTAYS 札幌公園精品酒店", "收拾行李\nCheck out", "", ""], ["", "MYSTAYS 札幌公園精品酒店-\n札幌車站", "(約15mins)(經過3站)\n中島公園-札幌（札幌市營）", "210日幣", ""], ["", "札幌車站", "", "", ""], ["", "札幌車站-\n新千歲機場", "(車程約45mins)\n\n機場快速Airport號\n(月台在5或6)", "", ""], ["", "新千歲機場", "提早報到+退稅後托運\n多餘時間可逛+買\n*退稅新制，待11月研究", "", "到機場時間依交通安排；原稿誤植的去程航班時段已移除。當日航班 15:20 起飛。"], ["15:20–18:55", "新千歲機場-\n桃園機場", "長榮航空 BR115｜CTS → TPE\n15:20 新千歲機場起飛（日本時間）\n18:55 桃園機場抵達（台灣時間）\n飛行時間：4 小時 35 分鐘", "", "依提供的航班資訊更新：抵達由 19:05 調整為 18:55。"]]}]</script>
 <script>
 'use strict';
 const days=JSON.parse(document.getElementById('trip-data').textContent);const $=id=>document.getElementById(id);const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let saved={};try{saved=JSON.parse(localStorage.getItem('hokkaido-winter-2026')||'{}')||{}}catch(e){$('save-info').textContent='此瀏覽器無法儲存，勾選僅保留於本次頁面'}
 function persist(){try{localStorage.setItem('hokkaido-winter-2026',JSON.stringify(saved))}catch(e){$('save-info').textContent='此瀏覽器無法儲存，勾選僅保留於本次頁面'}}
-const warnings={0:'原稿出門時間同列寫 06:30、06:50，請確認集合時間。',1:'原稿 08:30–09:00 的移動僅留 30 分鐘，但備註寫約 40 分鐘；場外市場往神宮的路線又從中島公園起算，需重新核對。晚餐時間欄「1」無法判讀。',2:'小樽詳細攻略仍待研究；運河搭船為備選，回程時間未定。',6:'14:00–15:00 紅磚廳舍與「14:00 左右出發去藻岩山」互相衝突，請擇一調整。博物館位置與各店資訊請出發前核對。',7:'札幌國際來回交通及上車時間原稿尚未填寫。',8:'K.L.I.M 開店時間原稿分別寫 18:00 與 19:00，出發前請確認。',9:'團體行程依導遊安排；17:50 回程、車程約 1.5 小時皆為原稿估計。',10:'接駁確切時間、晚餐待確認。',11:'接駁確切時間、晚餐待確認。',12:'接駁確切時間、晚餐待確認。',13:'回程航班時間原稿不一致：時間欄 15:20–18:55，文字欄 03:20–07:05。退稅流程原稿標註待研究。'};
+const warnings={0:'原稿出門時間同列寫 06:30、06:50，請確認集合時間。',1:'原稿 08:30–09:00 的移動僅留 30 分鐘，但備註寫約 40 分鐘；場外市場往神宮的路線又從中島公園起算，需重新核對。晚餐時間欄「1」無法判讀。',2:'小樽詳細攻略仍待研究；運河搭船為備選，回程時間未定。',6:'14:00–15:00 紅磚廳舍與「14:00 左右出發去藻岩山」互相衝突，請擇一調整。博物館位置與各店資訊請出發前核對。',7:'札幌國際來回交通及上車時間原稿尚未填寫。',8:'K.L.I.M 開店時間原稿分別寫 18:00 與 19:00，出發前請確認。',9:'團體行程依導遊安排；17:50 回程、車程約 1.5 小時皆為原稿估計。',10:'接駁確切時間、晚餐待確認。',11:'接駁確切時間、晚餐待確認。',12:'接駁確切時間、晚餐待確認。',13:'退稅流程原稿標註待研究。'};
 const week=['五','六','日','一','二','三','四'];let selected=Number.isInteger(saved.day)&&saved.day>=0&&saved.day<14?saved.day:0;
 $('dates').innerHTML=days.map((d,i)=>`<button class="day-tab" id="tab-${i}" role="tab" aria-controls="day-panel" aria-selected="false" tabindex="-1" data-day="${i}"><small>DAY ${String(i+1).padStart(2,'0')}</small><strong>12/${11+i}</strong><small>週${week[i%7]}</small></button>`).join('');
 function tags(r,i){let text=r.join(' '),a=[];for(const [re,t] of [[/接駁/,'接駁車'],[/JR|Airport/,'JR'],[/地鐵|地下鐵|南北線|東西線|東豐線/,'地鐵'],[/路面電車|市電/,'路面電車'],[/纜車/,'纜車'],[/遊覽車|團體/,'遊覽車'],[/步行/,'步行'],[/飛機|BR11/,'飛機'],[/開車/,'開車'],[/巴士/,'巴士']])if(re.test(text))a.push(`<span class="tag transit">${t}</span>`);if(/必吃|必拍|一定|芝麻|小樽觀光|藻岩山夜景|教練課|美瑛聖誕樹|白鬚瀑布|森林精靈/.test(text)||(/^手稻滑雪場$|^札幌國際滑雪場$/).test(r[1]))a.push('<span class="tag must">必去</span>');return a.join('')}
 const foodPlaces=JSON.parse($('food-map-data').textContent);
-const mealPlans=[[[15, 81, 118, 10], "12/11 抵達後｜大通、狸小路與薄野備選"], [[30, 31, 142, 0, 83, 143, 160], "12/12 場外市場與圓山｜早餐、午餐或甜點擇一"], [[2, 49, 107, 112, 52, 70], "12/13 小樽｜午晚餐與點心備選"], [[13, 20, 21, 38], "12/14 滑雪後｜回札幌再選晚餐"], [[10, 22, 37, 39], "12/15 教練課後｜依體力選晚餐或甜點"], [[7, 23, 34, 16], "12/16 滑雪後｜薄野、狸小路晚餐備選"], [[119, 5, 4, 6, 9, 65, 115], "12/17 北大、札幌站與紅磚廳舍｜午餐、咖啡備選"], [[78, 79, 80, 134], "12/18 滑雪後｜薄野晚餐備選，部分需另步行"], [[1, 11, 57, 14, 61, 39, 77], "12/19 購物日｜札幌站用餐，薄野收尾甜點"], [[25, 29, 62, 73], "12/20 一日遊回札幌後｜晚餐備選，以實際回程時間為準"], [[45, 101, 109, 136], "12/21 滑雪後｜薄野晚餐備選"], [[17, 75, 76, 137], "12/22 滑雪後｜晚餐備選，先確認預約與營業"], [[59, 138, 113, 82], "12/23 最後滑雪日｜晚餐與甜點備選"], [[], "12/24 回程｜保留機場交通與報到時間，不另插入市區餐廳"]];
-function mealOptions(i){const [ids,title]=mealPlans[i];return `<div class="meal-options"><h3>${escapeHtml(title)}</h3><p class="small">${ids.length?'自由選擇，不需全部吃；營業、訂位及交通時間請另確認。':'依原行程在機場用餐。'}</p><ul>${ids.map(id=>{const f=foodPlaces.find(p=>p.id===id);return `<li><a href="${f.url}" target="_blank" rel="noopener">${escapeHtml(f.name)} ↗</a><br><span class="small">${escapeHtml(f.area)}</span></li>`}).join('')}</ul><a href="#food">查看完整美食名單 ↓</a>${i===9?'<p class="note">美瑛「烏龍麵店 麥彩之丘」已收進完整名單；當天跟團，僅在導遊確認時間與動線允許時考慮。</p>':''}</div>`}
-function showDay(i,animate=true){selected=i;saved.day=i;persist();document.querySelectorAll('.day-tab').forEach((b,n)=>{b.setAttribute('aria-selected',String(n===i));b.tabIndex=n===i?0:-1});$('day-panel').setAttribute('aria-labelledby',`tab-${i}`);$('day-panel').innerHTML=`<div class="day-header"><span class="eyebrow">DAY ${String(i+1).padStart(2,'0')} · 2026.12.${11+i}（${week[i%7]}）</span><h3>${days[i].title}</h3>${warnings[i]?`<div class="note">待確認｜${warnings[i]}</div>`:''}</div><div class="timeline">${days[i].rows.map((r,n)=>{let time=r[0].replace(/\n/g,' ').trim();if(/搭/.test(time))time='依導遊安排';if(time==='1')time='時間待確認';let title=r[1]||(/市電|路面電車/.test(r[2])?'前往藻岩山':'交通與準備');return `<article class="event"><span class="event-time">${escapeHtml(time||'彈性安排・時間未定')}</span><h4>${escapeHtml(title).replace(/\n/g,' ')}</h4><div>${tags(r,i)}${r[3]?`<span class="tag cost">${escapeHtml(r[3])}</span>`:''}</div>${r[2]?`<p>${escapeHtml(r[2])}</p>`:''}${r[4]?`<p class="note">${escapeHtml(r[4])}</p>`:''}${r[1]&&!/飯店|晚餐|午餐|回程|準備/.test(r[1])?`<a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r[1].replace(/\n/g,' ')+' 北海道')}">地圖查詢 ↗</a>`:''}</article>`}).join('')}</div>${mealOptions(i)}`;$('prev').disabled=i===0;$('next').disabled=i===13;if(animate){$('day-panel').classList.remove('bounce');void $('day-panel').offsetWidth;$('day-panel').classList.add('bounce')}}
+const mealFacts = {"1":{"cuisine":"豬肉丼飯・札幌站 6 樓","pin":"43.0680504,141.3514556","short":"十勝豚丼 いっぴん"},"2":{"cuisine":"海鮮丼・堺町通","pin":"43.1949649,141.0049880"},"4":{"cuisine":"煎餃・札幌站西側","pin":"43.0684310,141.3462138"},"5":{"cuisine":"日式炸雞・札幌站北口","pin":"43.0709843,141.3492699"},"7":{"cuisine":"和牛涮涮鍋、壽喜燒","pin":"43.0566658,141.3543128","short":"牛のいしざき"},"9":{"cuisine":"迴轉壽司・miredo","pin":"43.0647259,141.3517014","short":"根室花丸 miredo 店"},"10":{"cuisine":"迴轉壽司・COCONO SUSUKINO","pin":"43.0552274,141.3527458","short":"根室花丸 COCONO 店"},"11":{"cuisine":"迴轉壽司・STELLAR PLACE 6 樓","pin":"43.0679281,141.3501447","short":"根室花丸 JR Tower 店"},"13":{"cuisine":"湯咖哩・南五條","pin":"43.0548876,141.3541422","short":"SHO-RIN 薄野本店"},"14":{"cuisine":"燒肉・札幌站南口","pin":"43.0660822,141.3488594","short":"焼肉徳寿 札幌駅前店"},"15":{"cuisine":"湯咖哩・南一條西五丁目","pin":"43.0588175,141.3499365"},"16":{"cuisine":"夜聖代・南四條","pin":"43.0562847,141.3559446"},"17":{"cuisine":"成吉思汗烤羊肉","pin":"43.0543225,141.3518843","short":"士別成吉思汗"},"20":{"cuisine":"味噌拉麵・元祖札幌拉麵橫丁","pin":"43.0546721,141.3542679"},"21":{"cuisine":"拉麵・元祖札幌拉麵橫丁","pin":"43.0549506,141.3542979"},"22":{"cuisine":"成吉思汗烤羊肉","pin":"43.0538364,141.3524624"},"23":{"cuisine":"燒肉・南三條","pin":"43.0568542,141.3507314","short":"徳寿 しんら亭"},"25":{"cuisine":"湯咖哩・南二條","pin":"43.0582237,141.3568988"},"29":{"cuisine":"湯咖哩・南三條","pin":"43.0569280,141.3509938","short":"SAMA 湯咖哩"},"30":{"cuisine":"海鮮、螃蟹・札幌場外市場","pin":"43.0705934,141.3203261"},"32":{"cuisine":"牛排飯・小樽站旁","pin":"43.1992851,140.9942267"},"34":{"cuisine":"迴轉壽司・NORBESA 地下樓","pin":"43.0561486,141.3508188"},"38":{"cuisine":"拉麵・元祖札幌拉麵橫丁","pin":"43.0548706,141.3543394","short":"弟子屈拉麵"},"39":{"cuisine":"芝麻聖代・南六條","pin":"43.0529243,141.3523018","short":"K.L.I.M"},"45":{"cuisine":"海膽料理・南五條","pin":"43.0541808,141.3501759"},"46":{"cuisine":"烏龍麵・四季彩之丘一帶","pin":"43.5295654,142.4637096"},"49":{"cuisine":"海鮮丼・小樽運河旁","pin":"43.1971600,141.0041716"},"52":{"cuisine":"拉麵・南小樽站旁","pin":"43.1869841,141.0109433"},"53":{"cuisine":"大福、日式麻糬・若松","pin":"43.1846177,141.0077128","short":"雷除志ん古"},"57":{"cuisine":"日式咖哩・STELLAR PLACE 6 樓","pin":"43.0679629,141.3511072","short":"天馬 札幌 STELLAR PLACE 店"},"59":{"cuisine":"牛肉涮涮鍋、壽喜燒","pin":"43.0581492,141.3564981"},"62":{"cuisine":"湯咖哩・南二條西三丁目","pin":"43.0580822,141.3535597"},"65":{"cuisine":"湯咖哩・Akarenga Terrace","pin":"43.0640102,141.3507032","short":"Tiger Curry"},"70":{"cuisine":"烤牡蠣、扇貝・堺町通","pin":"43.1957496,141.0032349"},"75":{"cuisine":"成吉思汗烤羊肉・南三條","pin":"43.0571394,141.3549902"},"76":{"cuisine":"炭火燒肉・南三條西四丁目","pin":"43.0560558,141.3519674","short":"極み超熟成炭火焼肉しぶき"},"77":{"cuisine":"夜聖代・薄野","pin":"43.0555637,141.3503764","short":"夜聖代 NANAKAMADOU"},"78":{"cuisine":"湯咖哩・薄野站西側","pin":"43.0557369,141.3512699"},"80":{"cuisine":"拉麵・南六條西八丁目","pin":"43.0522777,141.3475432"},"81":{"cuisine":"芝麻甜點・札幌 PARCO 5 樓","pin":"43.0588470,141.3531975","short":"nana’s green tea 札幌 PARCO 店"},"82":{"cuisine":"夜聖代・南四條","pin":"43.0565429,141.3571372","short":"Bar Penguin-dou"},"83":{"cuisine":"咖啡・圓山公園站一帶","pin":"43.0532929,141.3186157"},"101":{"cuisine":"成吉思汗烤羊肉","pin":"43.0562417,141.3558814"},"107":{"cuisine":"海鮮丼・三角市場內","pin":"43.1989489,140.9938453","short":"三角市場 滝波食堂"},"112":{"cuisine":"炸半雞・小樽站一帶","pin":"43.2003769,140.9951099"},"113":{"cuisine":"拉麵・南六條","pin":"43.0529377,141.3522932"},"118":{"cuisine":"義式冰淇淋・狸小路七丁目","pin":"43.0563848,141.3468089"},"119":{"cuisine":"霜淇淋、咖啡・北大校園","pin":"43.0717772,141.3456933"},"133":{"cuisine":"烘焙麵包・大通站","pin":"43.0603912,141.3556338","short":"DONGURI 大通店"},"134":{"cuisine":"蝦湯拉麵・南七條","pin":"43.0512900,141.3455201"},"136":{"cuisine":"燒肉・薄野","pin":"43.0557980,141.3554779","short":"RAZAN 燒肉 薄野南四條店"},"137":{"cuisine":"螃蟹料理・薄野","pin":"43.0549338,141.3559609","short":"冰雪之門"},"138":{"cuisine":"海鮮料理・狸 COMICHI","pin":"43.0580374,141.3552807","short":"シハチ鮮魚店 狸 COMICHI 店"},"143":{"cuisine":"咖哩・圓山","pin":"43.0535468,141.3260933","short":"Professor Maruyama Curry"},"160":{"cuisine":"芝麻布丁・西18丁目","pin":"43.0569333,141.3297541"},"139":{"cuisine":"市場內各攤・海鮮小吃","pin":"43.0707242,141.3207709","short":"札幌場外市場"}};
+
+const mealBackups = [[15,81,118,10],[30,31,142,0,83,143,160],[2,49,107,112,52,70],[13,20,21,38],[10,22,37,39],[7,23,34,16],[119,5,4,6,9,65,115],[78,79,80,134],[1,11,57,14,61,39,77],[25,29,62,73],[45,101,109,136],[17,75,76,137],[59,138,113,82],[]];
+
+const resorts = {
+  teine: {
+    name: '札幌手稻滑雪場',
+    lifts: 'https://sapporo-teine.com/snow/gelande-report',
+    trails: 'https://sapporo-teine.com/snow/wp-content/themes/teine-snow/files/course/course_map.pdf',
+    bus: 'https://sapporo-teine.com/snow/plan/bus-pack',
+    boarding: 'https://bigruns.com/basu_group/冬季運行-札幌市内指定ホテル-サッポロテイネ間',
+    restaurants: 'https://sapporo-teine.com/snow/facilities/restaurant'
+  },
+  kokusai: {
+    name: '札幌國際滑雪場',
+    lifts: 'https://www.sapporo-kokusai.jp/slopes/',
+    trails: 'https://www.sapporo-kokusai.jp/slopes/images/slopemap.png',
+    bus: 'https://www.sapporo-kokusai.jp/access/',
+    boarding: 'https://www.sapporo-kokusai.jp/facilities/',
+    restaurants: 'https://www.sapporo-kokusai.jp/content/restaurant/'
+  }
+};
+const destinations = {
+  hotel: 'ホテルマイステイズプレミア札幌パーク 北海道札幌市中央区南9条西2丁目2-10',
+  olympia: 'サッポロテイネ オリンピアスキーセンター 北海道札幌市手稲区手稲本町593-17',
+  highland: 'サッポロテイネ ハイランドスキーセンター 北海道札幌市手稲区手稲金山172',
+  odori31: '大通駅 31番出口 札幌市 北海道',
+  market: '札幌市中央卸売市場 場外市場 北海道札幌市',
+  shrine: '北海道神宮 札幌市',
+  jinguTea: '神宮茶屋 北海道神宮 札幌市',
+  zoo: '札幌市円山動物園',
+  teineShrine: '手稲神社 札幌市',
+  musicBox: '小樽オルゴール堂 本館 小樽市',
+  museum: '北海道大学総合博物館 札幌市',
+  tpe: '臺灣桃園國際機場 第二航廈',
+  cts: '新千歳空港 国際線旅客ターミナルビル 北海道'
+};
+const foodById = new Map(foodPlaces.map(place => [place.id, place]));
+const directions = (destination, mode) => 'https://www.google.com/maps/dir/?' + new URLSearchParams({
+  api: '1', destination, ...(mode ? {travelmode: mode} : {})
+}).toString();
+function outside(label, url, className = 'guide-link') {
+  return `<a class="${className}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)} <span aria-hidden="true">↗</span></a>`;
+}
+function eventLink(item) {
+  if (item.walk) return outside(item.linkLabel || '步行導航', directions(destinations[item.walk], 'walking'));
+  if (item.map) return outside('前往' + item.mapLabel, directions(destinations[item.map]));
+  if (item.food != null) return outside('步行到餐廳', directions(mealPin(item.food), 'walking'));
+  return '';
+}
+function stop(at, title, detail, extra = {}) { return {at, title, detail, ...extra}; }
+
+function teineDay({course = false, timed = false, evening}) {
+  const events = [];
+  if (timed) {
+    events.push(stop('08:05', '飯店接駁上車', '手帳記載 08:05。若訂的是 BIGRUNS，請於 07:55 到 MYSTAYS 札幌公園飯店 1 樓櫃檯前集合。', {meeting: true, walk: 'hotel', linkLabel: '前往集合飯店'}));
+    if (course) events.push(stop('09:30', '家瑜的教練課', '09:30–15:30，含一小時休息。集合雪區與教練碰面位置請依預約通知。', {meeting: true, until: '15:30'}));
+    events.push(stop('15:30', '收板、準備搭車', '整理雪具後，先確認預約單上的回程雪區。'));
+    events.push(stop('16:10', '搭回札幌的接駁車', '手帳記載 16:10。若搭 BIGRUNS 的這班車，16:00 在 Olympia 滑雪中心正門前集合。', {meeting: true, map: 'olympia', mapLabel: ' Olympia 集合點'}));
+  }
+  return {
+    resort: 'teine', timed, events,
+    route: ['MYSTAYS 札幌公園飯店', '手稻滑雪場', '札幌市區'],
+    flexible: timed ? evening : '去回程接駁的時間與停靠點待訂單確認。' + evening,
+    after: evening
+  };
+}
+
+const dayGuides = [
+  {
+    route: ['桃園機場', '新千歲機場', '札幌飯店', '大通與狸小路'],
+    events: [
+      stop('09:30', 'BR116 桃園起飛', '從桃園機場第二航廈出發。手帳列了 06:30、06:50 兩個出門時間，集合時間待確認。', {zone: '台灣', map: 'tpe', mapLabel: '桃園機場'}),
+      stop('14:05', '抵達新千歲機場', '入境、領行李後，前往機場地下 1 樓搭 JR。'),
+      stop('15:00', '搭 JR 前往札幌', '15:00–16:30 是手帳預留的移動時間，搭車班次視入境進度決定。', {estimate: true})
+    ],
+    after: '飯店入住後，到大通買雪具、逛狸小路，晚餐預計吃 SOUP CURRY KING。'
+  },
+  {
+    route: ['札幌場外市場', '北海道神宮與圓山', '西18丁目', '大通公園'],
+    events: [
+      stop('08:30', '從飯店前往場外市場', '搭地鐵至二十四軒站，再步行到市場。', {estimate: true, map: 'market', mapLabel: '場外市場'}),
+      stop('09:00', '場外市場吃早餐', '手帳想吃根室杉山水產 UME堂。', {estimate: true, food: 30}),
+      stop('11:00', '北海道神宮參拜', '接著到神宮茶屋與圓山公園。', {estimate: true, walk: 'shrine'}),
+      stop('12:00', '神宮茶屋與圓山公園', '午間散步，想吃茶餅和霜淇淋。', {estimate: true, walk: 'jinguTea'}),
+      stop('13:00', '圓山動物園', '下午往西18丁目吃點心。', {estimate: true, walk: 'zoo'}),
+      stop('14:00', 'POP/iN 吃芝麻布丁', '之後往大通移動。', {estimate: true, food: 160})
+    ],
+    after: '晚餐時間待定，接著去札幌電視塔、大通公園看燈。'
+  },
+  {
+    route: ['手稻神社', '南小樽站', '堺町通與運河', '小樽站'],
+    events: [
+      stop('08:30', '從飯店往手稻神社', '搭地鐵至札幌站，轉 JR 到手稻站。', {estimate: true, map: 'teineShrine', mapLabel: '手稻神社'}),
+      stop('09:00', '手稻神社', '在神社找滑雪安全御守。', {estimate: true, walk: 'teineShrine'}),
+      stop('10:00', '搭 JR 往南小樽站', '從手稻站繼續前往小樽。', {estimate: true}),
+      stop('11:00', '南小樽吃初代拉麵', '吃完午餐往音樂盒堂、堺町通散步。', {estimate: true, food: 52}),
+      stop('12:00', '小樽音樂盒堂與堺町通', '沿途有北一硝子和甜點店，運河遊船可彈性決定。', {estimate: true, walk: 'musicBox'}),
+      stop('17:30', 'cafe BAAL 晚餐', '手帳安排牛排飯，晚餐後從小樽站回飯店。', {estimate: true, food: 32})
+    ],
+    after: '晚餐後從小樽站搭車回札幌，回程班次彈性。'
+  },
+  teineDay({timed: true, evening: '回札幌後，在薄野附近挑一間湯咖哩。'}),
+  teineDay({timed: true, course: true, evening: '回札幌後，手帳安排在狸小路附近吃炭火燒肉しぶき。'}),
+  teineDay({timed: true, evening: '回札幌後，在薄野找達摩或大黑屋吃成吉思汗烤羊肉。'}),
+  {
+    route: ['諏訪神社與北大', '札幌站', '紅磚廳舍', '藻岩山', '薄野'],
+    events: [
+      stop('09:00', '郵局買紀念品', '接著去諏訪神社，再到北海道大學。', {estimate: true}),
+      stop('10:00', '逛北海道大學綜合博物館', '在北大校園散步，也可順路去北大 Marche Café。', {estimate: true, walk: 'museum'}),
+      stop('13:00', '札幌站附近吃燒肉', '手帳安排焼肉徳寿 札幌駅前店。', {estimate: true, food: 14}),
+      stop('14:00', '紅磚廳舍或提早去藻岩山', '兩個安排都寫在 14:00，要先決定下午動線。', {estimate: true})
+    ],
+    after: '上藻岩山看夜景，回到薄野再選拉麵店。'
+  },
+  {
+    resort: 'kokusai', route: ['札幌市區', '札幌國際滑雪場', '薄野'], events: [],
+    flexible: '來回車次與集合時間待訂單確認。雪場回程站在地下 1 樓租借區出口外。'
+  },
+  {
+    route: ['札幌護國神社', 'NORBESA 與狸小路', '札幌站與 JR 塔', '薄野'], events: [],
+    flexible: '今天沒有固定集合時間。逛到哪裡就在哪一區吃，傍晚想吃根室花丸，回薄野再去 K.L.I.M。'
+  },
+  {
+    route: ['大通站 31 號出口', '美瑛與四季彩之丘', '白鬚瀑布', '森林精靈露臺'],
+    events: [
+      stop('07:20', '大通站 31 號出口集合', '集合時段到 07:30。抵達出口後找當日導遊，後續各站跟團行動。', {meeting: true, until: '07:30', walk: 'odori31', linkLabel: '導航到 31 號出口'}),
+      stop('17:50', '預計搭遊覽車返程', '這是手帳估計，當天請依導遊通知的集合時間與地點。', {estimate: true})
+    ],
+    after: '回到札幌後再選晚餐，依遊覽車實際抵達時間安排。'
+  },
+  teineDay({evening: '回札幌後可在薄野吃晚餐。'}),
+  teineDay({evening: '晚餐可以選狸小路或薄野南側。'}),
+  teineDay({evening: '最後一晚可在狸小路吃飯，再回薄野吃甜點。'}),
+  {
+    route: ['札幌飯店', '札幌站', '新千歲機場', '桃園機場'],
+    events: [
+      stop('07:30', '整理行李、飯店退房', '從中島公園往札幌站，轉 JR 到新千歲機場。', {estimate: true}),
+      stop('15:20', 'BR115 新千歲起飛', '提早到國際線航廈辦理報到與行李托運。', {map: 'cts', mapLabel: '新千歲機場'}),
+      stop('18:55', 'BR115 抵達桃園', '台灣時間 18:55 抵達，日本時間為 19:55。', {zone: '台灣'})
+    ],
+    after: '最後一段是桃園機場返家。'
+  }
+];
+
+const routeMeals = [
+  [
+    ['大通・札幌 PARCO', [81, 62, 15]],
+    ['狸小路走到薄野', [118, 10]]
+  ],
+  [
+    ['場外市場吃早餐', [30, 139]],
+    ['圓山公園到西18丁目', [83, 143, 160]],
+    ['大通公園看燈前後', [133, 76]]
+  ],
+  [
+    ['南小樽站下車', [52, 53]],
+    ['沿堺町通走向運河', [2, 70, 49]],
+    ['小樽站與三角市場', [107, 112, 32]]
+  ],
+  [
+    ['回札幌・薄野站周邊', [78, 13]],
+    ['薄野拉麵橫丁', [20, 21, 38]]
+  ],
+  [
+    ['狸小路到薄野站', [76, 34, 10]],
+    ['薄野站往南・晚餐後甜點', [16, 39]]
+  ],
+  [
+    ['狸小路・南三條', [7, 23, 34]],
+    ['薄野・南五條吃羊肉', [22, 17]]
+  ],
+  [
+    ['北大校園與札幌站北口', [119, 5, 4]],
+    ['札幌站南口到紅磚廳舍', [14, 65, 9]],
+    ['下藻岩山後回薄野', [20, 21, 38]]
+  ],
+  [
+    ['回札幌・薄野與狸小路', [78, 22, 75]],
+    ['薄野西側吃拉麵', [80, 134]]
+  ],
+  [
+    ['NORBESA、狸小路與 PARCO', [34, 29, 81]],
+    ['札幌站・STELLAR PLACE', [11, 1, 57]],
+    ['回薄野吃聖代', [39, 77]]
+  ],
+  [
+    ['美瑛・四季彩之丘', [46], '午餐跟團安排。導遊確認當站有自由時間，再考慮這家烏龍麵。'],
+    ['回札幌後・大通到狸小路', [25, 29, 62]]
+  ],
+  [
+    ['回札幌・薄野晚餐', [45, 101, 136]],
+    ['往中島公園方向・南六條', [39, 113]]
+  ],
+  [
+    ['狸小路附近', [75, 76]],
+    ['薄野站往南', [17, 137]]
+  ],
+  [
+    ['狸小路東側', [138, 59]],
+    ['回飯店前・薄野', [113, 82]]
+  ],
+  []
+];
+
+function mealPin(id) {
+  return mealFacts[id].pin;
+}
+function mealOptions(i) {
+  const groups = routeMeals[i];
+  const resort = resorts[dayGuides[i].resort];
+  const rendered = groups.map(([name, ids, note]) => `
+    <div class="dining-stop">
+      <h4>${escapeHtml(name)}</h4>
+      ${note ? `<p class="small">${escapeHtml(note)}</p>` : ''}
+      <ul>${ids.map(id => {
+        const place = foodById.get(id);
+        const facts = mealFacts[id];
+        return `<li><div><b>${escapeHtml(facts.short || place.name)}</b>
+          <span class="small">${escapeHtml(facts.cuisine)}</span></div>
+          ${outside('步行導航', directions(mealPin(id), 'walking'), 'walk-link')}</li>`;
+      }).join('')}</ul>
+    </div>`).join('');
+  const picked = new Set(groups.flatMap(group => group[1]));
+  const extra = mealBackups[i].filter(id => !picked.has(id));
+  const other = extra.length ? `<details class="meal-backups"><summary>其他當日備選（${extra.length}）</summary>
+    <ul>${extra.map(id => {
+      const place = foodById.get(id);
+      return `<li>${outside(place.name, place.url)}</li>`;
+    }).join('')}</ul></details>` : '';
+  let note = '';
+  if (resort) note = `<p class="dining-tip">中午留在雪場，可先查${outside('山上餐廳', resort.restaurants)}。下列是回到札幌後的選擇。</p>`;
+  if (!groups.length) note = `<p>札幌退房後直接去新千歲機場。在國際線航廈用餐，可按安檢前、安檢後篩選餐廳。</p>
+    ${outside('新千歲機場餐廳與樓層', 'https://www.hokkaido-airports.com/zh-CHT/new-chitose/spend/shop/eat/')}`;
+  return `<section class="meal-options" aria-labelledby="meal-heading">
+    <h3 id="meal-heading" tabindex="-1">順路吃什麼</h3>${note}
+    ${rendered}${other}<a class="guide-link catalog-link" href="#food">看全部 ${foodPlaces.length} 個美食地標 →</a></section>`;
+}
+
+const japanClock = new Intl.DateTimeFormat('en-GB', {timeZone: 'Asia/Tokyo', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'});
+const japanDateParts = new Intl.DateTimeFormat('en', {timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit'});
+function japanDate(now) {
+  const parts = Object.fromEntries(japanDateParts.formatToParts(now).map(part => [part.type, part.value]));
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+function eventTime(i, item, time = item.at) {
+  const offset = item.zone === '台灣' ? '+08:00' : '+09:00';
+  return Date.parse(`${wxDate(i)}T${time}:00${offset}`);
+}
+function displayTime(item) {
+  return `${item.estimate ? '約 ' : ''}${item.at}${item.until ? '–' + item.until : ''}${item.zone ? '（' + item.zone + '）' : ''}`;
+}
+function homeState(now, choice) {
+  const index = wxGap(japanDate(now), wxDate(0));
+  const manual = choice !== 'auto';
+  const i = manual ? Number(choice) : Math.max(0, Math.min(days.length - 1, index));
+  const live = !manual && i === index;
+  const mode = live ? '今日行程' : manual ? '日期預覽' : index < 0 ? '出發前・首日預覽' : '旅程回顧';
+  const events = dayGuides[i].events;
+  const ms = now.getTime();
+  const start = live ? events.findIndex(item => ms < eventTime(i, item, item.until || item.at) + (item.until ? 0 : 60000)) : (events.length ? 0 : -1);
+  const current = live && start >= 0 && ms >= eventTime(i, events[start]);
+  return {i, mode, live, start, current};
+}
+function guideEvent(label, item) {
+  return `<div class="guide-next"><div class="guide-next-label">${escapeHtml(label)}</div>
+    <p class="guide-stop"><strong>${escapeHtml(displayTime(item))}</strong><b>${escapeHtml(item.title)}</b></p>
+    <p class="guide-detail">${escapeHtml(item.detail)}</p>${eventLink(item)}</div>`;
+}
+function guideSummary(state) {
+  const {i, live, start, current, mode} = state;
+  const plan = dayGuides[i];
+  const item = plan.events[start];
+  if (!item) {
+    const title = plan.resort && !plan.timed ? '接駁時間待確認' : !plan.events.length ? '自由安排' : '接下來的安排';
+    return `<div class="guide-next"><b>${title}</b><p class="guide-detail">${escapeHtml(plan.flexible || plan.after)}</p></div>`;
+  }
+  let label = '當日第一個時間';
+  if (live) label = current ? '目前時段' : item.meeting ? '下一個集合或出發時間' : '下一站';
+  if (mode === '旅程回顧') label = '當日安排';
+  const following = plan.events[start + 1];
+  const nextLine = following ? `<p class="guide-follow"><span>接著</span> ${escapeHtml(displayTime(following))}　${escapeHtml(following.title)}</p>` : '';
+  return guideEvent(label, item) + nextLine;
+}
+let displayedHome = null;
+function refreshGuide(now = new Date()) {
+  const state = homeState(now, $('guide-date').value);
+  const {i, mode} = state;
+  const iso = japanDate(now);
+  const clock = $('guide-clock');
+  clock.dateTime = now.toISOString();
+  clock.textContent = `日本時間 ${iso.slice(5).replace('-', '/')} ${japanClock.format(now)}`;
+  const dateChanged = !displayedHome || i !== displayedHome.i || mode !== displayedHome.mode;
+  if (dateChanged) {
+    const plan = dayGuides[i];
+    $('guide-mode').textContent = mode;
+    $('guide-title').textContent = `12/${11 + i}（${week[i % 7]}）${days[i].title}`;
+    $('guide-route').innerHTML = plan.route.map(name => `<li>${escapeHtml(name)}</li>`).join('');
+    $('guide-ski').hidden = !plan.resort;
+    const details = $('guide-times');
+    details.hidden = !plan.events.length;
+    details.open = false;
+    $('guide-time-list').innerHTML = plan.events.map(item => `<li><span>${escapeHtml(displayTime(item))}</span>${escapeHtml(item.title)}</li>`).join('');
+  }
+  if (dateChanged || displayedHome.start !== state.start || displayedHome.current !== state.current) {
+    $('guide-next').innerHTML = guideSummary(state);
+  }
+  displayedHome = state;
+}
+function updateTripClock() {
+  const now = new Date();
+  countdown(now);
+  refreshGuide(now);
+}
+
+function skiCard(i) {
+  const plan = dayGuides[i];
+  const resort = resorts[plan.resort];
+  if (!resort) return '';
+  let boarding;
+  if (plan.resort === 'teine') {
+    const guide = plan.timed
+      ? `<p class="bus-plan"><b>手帳接駁</b> 08:05 飯店出發　／　15:30 收板　／　16:10 回程</p>
+         <p>若搭 BIGRUNS，去程 07:55 到 MYSTAYS 札幌公園飯店 1 樓櫃檯前。回程 16:10 對應 Olympia，請在 16:00 到中心正門前集合，並核對訂單上的站名。</p>`
+      : `<p class="bus-plan"><b>這天的去回程車次、時間與雪區待訂單確認。</b></p>
+         <p>下方是 BIGRUNS 的官方站點。預約其他接駁時，請依訂單上的乘車地點。</p>`;
+    const course = i === 4
+      ? `<p class="ski-lesson"><b>09:30 教練課</b>　BIGRUNS 去程表列 Olympia 09:25 到、Highland 09:35 到。請先問教練在哪一區集合，尤其是 Highland 的課。</p>` : '';
+    boarding = `${guide}<div class="ski-stops">
+      <div><b>Olympia</b><small>オリンピアスキーセンター</small><span>中心正門前</span>
+        ${outside('查看 Olympia 位置', directions(destinations.olympia))}</div>
+      <div><b>Highland</b><small>ハイランドスキーセンター</small><span>滑雪中心前</span>
+        ${outside('查看 Highland 位置', directions(destinations.highland))}</div>
+      </div>${plan.timed ? '<p class="ski-caption">BIGRUNS 回程表列 Highland 16:00、Olympia 16:10，各站都要提早 10 分鐘集合。</p>' : ''}
+      ${course}${outside('官方接駁時刻表', resort.bus)}　${outside('業者集合說明', resort.boarding)}`;
+  } else {
+    boarding = `<p class="bus-plan"><b>12/18 的去回程車次與時間待訂單確認。</b></p>
+      <p>雪場官方標示的巴士站在滑雪中心地下 1 樓（B1），走出租借區出入口就能看到。若訂單指定其他集合處，請依業者通知。</p>
+      ${outside('官方站點位置圖', resort.boarding)}　${outside('巴士站說明', 'https://www.sapporo-kokusai.jp/qanda/')}　${outside('查接駁路線與業者', resort.bus)}`;
+  }
+  return `<section class="ski-card" aria-labelledby="ski-heading">
+    <h3 id="ski-heading" tabindex="-1">雪場快查 <span>${resort.name}</span></h3>
+    <div class="ski-official">${outside('今日纜車運行', resort.lifts, 'guide-button')}${outside('官方雪道圖', resort.trails, 'guide-button')}</div>
+    <h4>接駁與回程集合點</h4>${boarding}</section>`;
+}
+let pendingDayTarget = '';
+function focusDaySection(target) {
+  const heading = $(target);
+  if (!heading) return;
+  heading.focus({preventScroll: true});
+  heading.scrollIntoView({block: 'start', behavior: 'instant'});
+}
+function openGuideDay(target) {
+  selected = displayedHome.i;
+  pendingDayTarget = target;
+  location.hash = 'days';
+}
+function revealDayTab(i) {
+  const list = $('dates');
+  const tab = $(`tab-${i}`);
+  if (!tab) return;
+  const box = list.getBoundingClientRect();
+  const item = tab.getBoundingClientRect();
+  if (item.left < box.left || item.right > box.right)
+    list.scrollLeft += item.left - box.left - (box.width - item.width) / 2;
+}
+function bindGuide() {
+  const choice = $('guide-date');
+  choice.innerHTML = '<option value="auto">自動・依日本日期</option>' + days.map((d, i) =>
+    `<option value="${i}">12/${11 + i}（${week[i % 7]}）${escapeHtml(d.title)}</option>`).join('');
+  choice.value = 'auto';
+  choice.addEventListener('change', () => refreshGuide());
+  $('guide-day').addEventListener('click', () => openGuideDay('day-heading'));
+  $('guide-ski').addEventListener('click', () => openGuideDay('ski-heading'));
+  $('guide-meals').addEventListener('click', () => openGuideDay('meal-heading'));
+  $('day-panel').addEventListener('click', event => {
+    const jump = event.target.closest('[data-day-jump]');
+    if (jump) focusDaySection(jump.dataset.dayJump);
+  });
+  updateTripClock();
+  setInterval(updateTripClock, 30000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) updateTripClock(); });
+  window.addEventListener('pageshow', () => updateTripClock());
+}
+const wxPlaces={sapporo:{name:'札幌市區',lat:43.0621,lon:141.3544},otaru:{name:'小樽市區',lat:43.1907,lon:140.9947},teine:{name:'手稻滑雪場周邊',lat:43.077,lon:141.201},kokusai:{name:'札幌國際滑雪場周邊',lat:43.072,lon:141.083},biei:{name:'美瑛市區',lat:43.588,lon:142.467},furano:{name:'富良野市區',lat:43.342,lon:142.383},chitose:{name:'新千歲機場周邊',lat:42.775,lon:141.692}};
+const wxDayPlaces=[['sapporo','chitose'],['sapporo'],['otaru'],['teine','sapporo'],['teine','sapporo'],['teine','sapporo'],['sapporo'],['kokusai','sapporo'],['sapporo'],['biei','furano'],['teine','sapporo'],['teine','sapporo'],['teine','sapporo'],['chitose','sapporo']];
+const wxDaily=['weather_code','temperature_2m_max','temperature_2m_min','apparent_temperature_min','precipitation_probability_max','precipitation_sum','snowfall_sum','wind_speed_10m_max','wind_gusts_10m_max'];
+const wxCache=new Map(),wxPending=new Map();let wxToken=0;
+function wxToday(now = new Date()) { return japanDate(now); }
+function wxDate(i){return '2026-12-'+String(11+i).padStart(2,'0')}
+function wxGap(date,today=wxToday()){return Math.round((Date.parse(date+'T00:00:00+09:00')-Date.parse(today+'T00:00:00+09:00'))/86400000)}
+function wxState(date){const n=wxGap(date);return n<0?'past':n>15?'future':'available'}
+function wxDescription(code){if(code==null)return '天氣資料暫缺';return ({0:'☀ 晴朗',1:'🌤 大致晴朗',2:'⛅ 局部多雲',3:'☁ 陰天',45:'🌫 霧',48:'🌫 霧淞',51:'🌧 毛毛雨',53:'🌧 毛毛雨',55:'🌧 強毛毛雨',56:'🌧 凍毛毛雨',57:'🌧 凍毛毛雨',61:'🌧 小雨',63:'🌧 中雨',65:'🌧 大雨',66:'🌧 凍雨',67:'🌧 凍雨',71:'❄ 小雪',73:'❄ 中雪',75:'❄ 大雪',77:'❄ 雪粒',80:'🌦 陣雨',81:'🌦 陣雨',82:'🌧 強陣雨',85:'🌨 陣雪',86:'🌨 強陣雪',95:'⛈ 雷雨',96:'⛈ 雷雨伴冰雹',99:'⛈ 雷雨伴冰雹'})[code]||'天氣狀況未分類'}
+function wxNumber(v,unit){return typeof v==='number'&&Number.isFinite(v)?v.toFixed(unit==='%'?0:1)+' '+unit:'—'}
+function wxShell(i){return `<section class="weather-card" aria-label="當日天氣預報"><div class="head"><h3 id="wx-heading" tabindex="-1">每日天氣 <span class="small">${wxDate(i)}・日本時間</span></h3><button class="btn" id="wx-refresh" type="button">更新天氣 ↻</button></div><label class="small" for="wx-place">預報地點</label> <select id="wx-place">${wxDayPlaces[i].map(k=>`<option value="${k}">${wxPlaces[k].name}</option>`).join('')}</select><div id="wx-body" role="status" aria-live="polite">讀取天氣中…</div><p class="small">資料：<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>（<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>）・自動選用模型<br>地點為代表座標的網格預報；山區與不同海拔可能差異很大。降雪量不是雪場積雪深度，風速也不代表纜車營運狀況。</p></section>`}
+function wxURL(key){const p=wxPlaces[key];return 'https://api.open-meteo.com/v1/forecast?'+new URLSearchParams({latitude:p.lat,longitude:p.lon,daily:wxDaily.join(','),timezone:'Asia/Tokyo',forecast_days:'16',temperature_unit:'celsius',wind_speed_unit:'ms',precipitation_unit:'mm'})}
+async function wxGet(key,force=false){const cacheKey='hokkaido-wx-v1-'+key;let cached=wxCache.get(key);if(!cached){try{cached=JSON.parse(localStorage.getItem(cacheKey)||'null')}catch(e){}}
+ if(!force&&cached&&cached.day===wxToday()&&Date.now()-cached.at>=0&&Date.now()-cached.at<3600000&&Array.isArray(cached.data?.daily?.time))return cached;
+ if(wxPending.has(key))return wxPending.get(key);
+ const task=(async()=>{const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),12000);try{const response=await fetch(wxURL(key),{signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status);const data=await response.json();if(data.error||!Array.isArray(data.daily?.time))throw new Error('Invalid weather response');const result={data,at:Date.now(),day:wxToday()};wxCache.set(key,result);try{localStorage.setItem(cacheKey,JSON.stringify(result))}catch(e){}return result
+ } catch (error) {
+   if (cached && Array.isArray(cached.data?.daily?.time) && Number.isFinite(cached.at)) {
+     return {...cached, offlineCopy:true};
+   }
+   throw error;
+ } finally{clearTimeout(timeout)}})();wxPending.set(key,task);try{return await task}finally{wxPending.delete(key)}}
+function wxContent(result,date){const daily=result.data.daily,index=daily.time.indexOf(date);if(index<0)return '<p>此日期的預報尚未提供，請稍後更新。</p>';const v=k=>daily[k]?.[index];const cells=[['最低氣溫',v('temperature_2m_min'),'°C'],['最高氣溫',v('temperature_2m_max'),'°C'],['最低體感',v('apparent_temperature_min'),'°C'],['最高降水機率',v('precipitation_probability_max'),'%'],['總降水量（含雪水當量）',v('precipitation_sum'),'mm'],['預計降雪量',v('snowfall_sum'),'cm'],['最大風速',v('wind_speed_10m_max'),'m/s'],['最大陣風',v('wind_gusts_10m_max'),'m/s']];return `<p class="wx-summary">${wxDescription(v('weather_code'))}</p><div class="wx-grid">${cells.map(([label,value,unit])=>`<div><span>${label}</span><strong>${wxNumber(value,unit)}</strong></div>`).join('')}</div><p class="small">取得時間：${new Date(result.at).toLocaleString('zh-TW',{timeZone:'Asia/Tokyo',hour12:false})}（日本時間）・缺少數值以「—」表示${wxGap(date)>=7?'<br>此為較遠期預報，仍可能大幅變動。':''}</p>`}
+async function wxLoad(i,force=false){const token=++wxToken,date=wxDate(i),body=$('wx-body'),select=$('wx-place'),button=$('wx-refresh');if(!body||!select||!button)return;const state=wxState(date);button.disabled=false;
+ if(state==='future'){body.innerHTML='<p class="wx-summary">❄ 尚未開放預報</p><p>此服務最多提供含今天在內 16 天預報。旅行日期接近後，開啟此頁或按「更新天氣」即可取得，不需重新上傳網站。</p>';return}
+ if(state==='past'){body.innerHTML='<p>此日期已過，這裡不以目前天氣冒充歷史資料。</p>';return}
+ button.disabled=true;body.innerHTML='<p>正在取得 '+escapeHtml(wxPlaces[select.value].name)+' 的預報…</p>';try{const result=await wxGet(select.value,force);if(token===wxToken&&selected===i)body.innerHTML=(result.offlineCopy && result.data.daily.time.includes(date) ? '<p class="note">更新失敗，以下是上次取得的預報，請留意取得時間。</p>' : '')+wxContent(result,date)}catch(e){if(token===wxToken&&selected===i)body.innerHTML='<p class="note">暫時無法取得天氣，可能是網路或服務限制。請確認連線後按「更新天氣」重試。</p>'}finally{if(token===wxToken)button.disabled=false}}
+function wxBind(i){const place=$('wx-place'),button=$('wx-refresh');place.onchange=()=>wxLoad(i);button.onclick=()=>wxLoad(i,true);wxLoad(i)}
+
+function itineraryClock(i, n, text) {
+  const plan = dayGuides[i];
+  if (plan.resort && n >= 1 && n <= 3) {
+    if (!plan.timed) return n === 2 ? '雪場活動・依當天安排' : '接駁時間待確認';
+    if (n === 1) return '08:05 上車';
+    if (n === 2) return i === 4 ? '09:30–15:30 教練課' : '抵達後滑雪';
+    return '15:30 收板・16:10 回程';
+  }
+  const time = text.replace(/\n/g, ' ').trim();
+  if (/搭/.test(time)) return '依導遊安排';
+  if (time === '1') return '時間待確認';
+  return time || '彈性安排・時間未定';
+}
+function showDay(i, animate = true) {
+  selected = i;
+  saved.day = i;
+  persist();
+  document.querySelectorAll('.day-tab').forEach((tab, n) => {
+    tab.setAttribute('aria-selected', String(n === i));
+    tab.tabIndex = n === i ? 0 : -1;
+  });
+  const panel = $('day-panel');
+  panel.setAttribute('aria-labelledby', `tab-${i}`);
+  const events = days[i].rows.map((r, n) => {
+    const time = itineraryClock(i, n, r[0]);
+    const title = r[1] || (/市電|路面電車/.test(r[2]) ? '前往藻岩山' : '交通與準備');
+    let map = '';
+    if ((i === 0 && n === 1) || (i === 13 && n === 5)) {
+      const airport = i === 0 ? destinations.tpe : destinations.cts;
+      map = outside('前往出發航廈', directions(airport), 'maplink');
+    } else if (dayGuides[i].resort && n === 2) {
+      map = '<button type="button" class="text-jump" data-day-jump="ski-heading">查雪道圖與回程站點 ↑</button>';
+    } else if (r[1] && !/飯店|晚餐|午餐|回程|準備/.test(r[1])) {
+      const query = encodeURIComponent(r[1].replace(/\n/g, ' ') + ' 北海道');
+      map = outside('地圖查詢', 'https://www.google.com/maps/search/?api=1&query=' + query, 'maplink');
+    }
+    return `<article class="event"><span class="event-time">${escapeHtml(time)}</span>
+      <h4>${escapeHtml(title).replace(/\n/g, ' ')}</h4>
+      <div>${tags(r,i)}${r[3] ? `<span class="tag cost">${escapeHtml(r[3])}</span>` : ''}</div>
+      ${r[2] ? `<p>${escapeHtml(r[2])}</p>` : ''}${r[4] ? `<p class="note">${escapeHtml(r[4])}</p>` : ''}${map}</article>`;
+  }).join('');
+  panel.innerHTML = `<div class="day-header"><span class="eyebrow">DAY ${String(i+1).padStart(2,'0')} · 2026.12.${11+i}（${week[i%7]}）</span>
+    <h3 id="day-heading" tabindex="-1">${escapeHtml(days[i].title)}</h3>
+    ${warnings[i] ? `<div class="note">待確認｜${escapeHtml(warnings[i])}</div>` : ''}
+    <div class="day-jumps">${dayGuides[i].resort ? '<button type="button" data-day-jump="ski-heading">雪場快查 ↓</button>' : ''}
+    <button type="button" data-day-jump="wx-heading">當天天氣 ↓</button>
+    <button type="button" data-day-jump="meal-heading">順路吃什麼 ↓</button></div></div>
+    ${skiCard(i)}${wxShell(i)}<div class="timeline">${events}</div>${mealOptions(i)}`;
+  $('prev').disabled = i === 0;
+  $('next').disabled = i === days.length - 1;
+  revealDayTab(i);
+  wxBind(i);
+  if (animate) {
+    panel.classList.remove('bounce');
+    void panel.offsetWidth;
+    panel.classList.add('bounce');
+  }
+}
+function countdown(now = new Date()) {
+  const n = wxGap(wxDate(0), japanDate(now));
+  $('countdown').textContent = n > 0 ? n : Math.min(days.length, 1 - n);
+  $('count-label').textContent = n > 0 ? '距離出發還有' : n > -days.length ? '旅途進行中・第' : '已收藏冬日回憶';
+  $('count-unit').textContent = '天';
+}
 $('dates').addEventListener('click',e=>{const b=e.target.closest('button');if(b)showDay(+b.dataset.day)});$('dates').addEventListener('keydown',e=>{let i=selected;if(e.key==='ArrowRight')i=(i+1)%14;else if(e.key==='ArrowLeft')i=(i+13)%14;else if(e.key==='Home')i=0;else if(e.key==='End')i=13;else return;e.preventDefault();showDay(i);$(`tab-${i}`).focus()});function step(n){showDay(selected+n);$(`tab-${selected}`).scrollIntoView({block:'nearest',inline:'center'});$('days').scrollIntoView({block:'start'})}$('prev').onclick=()=>step(-1);$('next').onclick=()=>step(1);
 const lists={tasks:['核對 BR115 回程航班時間','填寫 Visit Japan Web 資料','去程線上報到（原稿：起飛前 48 小時內）','確認各日滑雪接駁車與集合地點','確認 12/15 家瑜教練課預約','安排小樽路線、確認是否搭運河船','調整 12/17 紅磚廳舍與藻岩山時間','購買藻岩山套票（原稿：KLOOK）','確認 12/20 一日遊集合：07:20–07:30 大通 31 號出口','準備雪上摩托車現金（原稿：單人 ¥15,000／雙人 ¥20,000）','買雪靴、安全帽時帶雪鏡並穿雪襪','準備雪風折扣與藥妝優惠券','確認回程退稅流程及 K.L.I.M 營業時間'],before:['確認護照、機票與住宿訂單','確認滑雪旅遊保險保障範圍','準備上網 eSIM／漫遊','備份訂單與接駁資訊供離線查看','準備日圓現金與支付卡','出發前查看天氣、雪場營運與交通公告','確認托運、手提行李及電池攜帶規定'],snow:['雪衣、雪褲','排汗底層與保暖中層','雪襪與備用襪','防水手套、內層手套','雪鏡、安全帽（或抵達購買）','雪靴（或抵達購買）','護臀、護膝等護具','脖圍、保暖帽','確認雪板與固定器租借／攜帶'],daily:['護照、卡片、日圓現金','手機、充電線、充電器','行動電源（攜帶方式依航空規定）','保暖外套、日常衣物與內衣褲','適合雪地步行的鞋子','個人藥品、盥洗用品','護唇膏、防曬、保濕用品','相機與記憶卡','水瓶、購物袋']};
 for(const [group,items] of Object.entries(lists))$(group).innerHTML=items.map((t,i)=>`<label><input type="checkbox" data-check="${group}-${i}" ${saved[group+'-'+i]?'checked':''}><span>${t}</span></label>`).join('');function progress(){const all=[...document.querySelectorAll('[data-check]')],done=all.filter(c=>c.checked).length;$('progress-text').textContent=`準備進度 ${done} / ${all.length} 項完成`;$('progress-bar').style.width=done/all.length*100+'%'}document.querySelectorAll('[data-check]').forEach(c=>c.onchange=()=>{saved[c.dataset.check]=c.checked;persist();progress()});$('reset').onclick=()=>{if(confirm('要清除所有待辦與行李的勾選紀錄嗎？')){document.querySelectorAll('[data-check]').forEach(c=>{c.checked=false;delete saved[c.dataset.check]});persist();progress()}};
 const reduceQuery=matchMedia('(prefers-reduced-motion: reduce)');$('motion').checked=saved.reduce===true||reduceQuery.matches;function setMotion(){document.documentElement.classList.toggle('reduce',$('motion').checked)}$('motion').onchange=()=>{saved.reduce=$('motion').checked;persist();setMotion()};reduceQuery.addEventListener('change',e=>{if(e.matches)$('motion').checked=true;setMotion()});setMotion();
 const dessert=`<svg viewBox="0 0 80 80" aria-hidden="true"><g stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"><path fill="#FFFCF6" d="M20 42Q9 31 25 24Q20 12 40 7Q36 18 51 21Q67 29 58 42Z"/><path fill="#F6D27A" d="M19 42h42L48 69H32Z"/><path d="M40 69v7M29 77h22"/><path fill="none" d="M25 32h30"/></g></svg>`;
 $('foods').innerHTML=[['Nanazugurinti','芝麻甜點','PARCO 5F・大通','10:00–20:00'],['K.L.I.M','芝麻聖代','薄野附近','開店 18:00／19:00 待確認；至 02:30'],['POP/iN','芝麻布丁','西18丁目','08:00–19:00'],['Donguri Odori','超好吃的麵包','大通站附近','10:00–21:00']].map(f=>`<article class="food">${dessert}<span class="tag must">必吃</span><h3>${f[0]}</h3><b>${f[1]}</b><p>${f[2]}<br>${f[3]}</p><a class="maplink" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(f[0]+' 札幌')}" target="_blank" rel="noopener">地圖查詢 ↗</a></article>`).join('');
-function renderFoodPlaces(){const q=$('food-search').value.trim().toLocaleLowerCase(),area=$('food-area').value;const shown=foodPlaces.filter(f=>(!area||f.area===area)&&(!q||(f.name+' '+f.address).toLocaleLowerCase().includes(q)));$('food-count').textContent=`顯示 ${shown.length} / ${foodPlaces.length} 個美食地標`;$('map-foods').innerHTML=shown.length?shown.map(f=>`<article class="food"><span class="tag">${escapeHtml(f.area)}</span><h3>${escapeHtml(f.name)}</h3><span class="small">${f.kind}</span><p>${escapeHtml(f.address)}</p>${f.id===56?'<p class="note">地址缺漏，請先確認分店。</p>':''}${f.id===130?'<p class="note">位於大沼，未排入這次札幌／小樽行程。</p>':''}<a class="btn maplink" href="${f.url}" target="_blank" rel="noopener">開啟這家店的地圖 ↗</a></article>`).join(''):'<p>找不到符合的地點，請換個關鍵字或地區。</p>'}
-[...new Set(foodPlaces.map(f=>f.area))].forEach(area=>{const option=document.createElement('option');option.value=area;option.textContent=area;$('food-area').appendChild(option)});$('food-search').addEventListener('input',renderFoodPlaces);$('food-area').addEventListener('change',renderFoodPlaces);renderFoodPlaces();
+function normalizeFoodSearch(text) { return text.normalize('NFKC').toLocaleLowerCase(); }
+function renderFoodPlaces(){const q=normalizeFoodSearch($('food-search').value.trim()),area=$('food-area').value;const shown=foodPlaces.filter(f=>(!area||f.area===area)&&(!q||normalizeFoodSearch([f.name,f.address,f.area,f.kind].join(' ')).includes(q)));$('food-count').textContent=`顯示 ${shown.length} / ${foodPlaces.length} 個美食地標`;$('map-foods').innerHTML=shown.length?shown.map(f=>`<article class="food"><span class="tag">${escapeHtml(f.area)}</span><h3>${escapeHtml(f.name)}</h3><span class="small">${f.kind}</span><p>${escapeHtml(f.address)}</p>${f.id===56?'<p class="note">地址缺漏，請先確認分店。</p>':''}${f.id===130?'<p class="note">位於大沼，未排入這次札幌／小樽行程。</p>':''}<a class="btn maplink" href="${f.url}" target="_blank" rel="noopener">開啟這家店的地圖 ↗</a></article>`).join(''):'<p>找不到符合的地點，請換個關鍵字或地區。</p>'}
+[...new Set(foodPlaces.map(f=>f.area))].forEach(area=>{const option=document.createElement('option');option.value=area;option.textContent=area;$('food-area').appendChild(option)});$('food-search').addEventListener('input',renderFoodPlaces);$('food-area').addEventListener('change',renderFoodPlaces);
 [81,39,160,133].forEach((id,n)=>{const a=$('foods').querySelectorAll('a')[n];if(a)a.href=foodPlaces.find(f=>f.id===id).url});
-function countdown(){const now=new Date(),today=new Date(now.toLocaleDateString('en-CA',{timeZone:'Asia/Taipei'})+'T00:00:00+08:00');const n=Math.round((new Date('2026-12-11T00:00:00+08:00')-today)/864e5);$('countdown').textContent=n>0?n:n>=-13?1-n:'14';$('count-label').textContent=n>0?'距離出發還有':n>=-13?'旅途進行中・第':'已收藏冬日回憶';$('count-unit').textContent='天'}countdown();setInterval(countdown,60000);showDay(selected,false);progress();
+progress();
+let loadedFood = false;
+let activePage = '';
+const routeNames={home:'首頁',days:'每日行程',food:'美食地圖',stay:'住宿資訊',todo:'準備清單'};
+function resolvePage(hash){const key=hash.replace(/^#/,'');return key==='packing'?'todo':key==='flights'?'home':Object.prototype.hasOwnProperty.call(routeNames,key)?key:'home'}
+function navigatePage(focusHeading=false){const key=resolvePage(location.hash);document.querySelectorAll('[data-page]').forEach(page=>{page.hidden=page.dataset.page!==key});document.querySelectorAll('[data-route]').forEach(link=>{if(link.dataset.route===key)link.setAttribute('aria-current','page');else link.removeAttribute('aria-current')});document.title=routeNames[key]+'｜北海道冬日手帳';if (key === 'food' && !loadedFood) {
+  renderFoodPlaces();
+  loadedFood = true;
+}
+if (key === 'days' && activePage !== 'days') showDay(selected, false);
+activePage = key;
+if (key === 'home') updateTripClock();
+if (key === 'days' && pendingDayTarget) {
+  const target = pendingDayTarget;
+  pendingDayTarget = '';
+  focusDaySection(target);
+  return;
+}
+const anchor=location.hash.slice(1);if(anchor==='packing'||anchor==='flights'){document.getElementById(anchor).scrollIntoView({block:'start',behavior:'instant'})}else{window.scrollTo({top:0,behavior:'instant'})}if(focusHeading){const heading=(anchor==='packing'||anchor==='flights') ? document.getElementById(anchor).querySelector('h2') : document.querySelector('[data-page="'+key+'"] h1, [data-page="'+key+'"] h2');if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true})}}}
+window.addEventListener('hashchange',()=>navigatePage(true));
+document.addEventListener('click',event=>{const link=event.target.closest('a[href^="#"]');if(!link)return;if(link.hash===location.hash){event.preventDefault();navigatePage(true)}});
+bindGuide();
+navigatePage(false);
 </script></body></html>
